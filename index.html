@@ -1,126 +1,1767 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Per Náutico</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: #120303; color: #f9f9f9; font-family: 'Inter', sans-serif; min-height: 100vh; }
-        header { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
-        .logo h1 { font-size: 32px; font-weight: 800; color: #ff8a8a; }
-        .logo p { margin-top: 4px; font-size: 14px; color: rgba(255,255,255,0.6); text-transform: uppercase; }
-        .filtros { max-width: 1200px; width: 100%; margin: 20px auto; padding: 0 20px; display: flex; gap: 16px; flex-wrap: wrap; }
-        input, select { background: rgba(255,255,255,0.03); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 14px 18px; font-size: 14px; }
-        input { flex: 1; min-width: 260px; }
-        select { min-width: 220px; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px 60px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
-        .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 24px; }
-        .card h3 { font-size: 18px; margin-bottom: 8px; }
-        .posicao { display: inline-block; font-size: 11px; background: rgba(255,255,255,0.06); padding: 5px 10px; border-radius: 20px; margin-bottom: 16px; }
-        .badge { font-size: 28px; font-weight: 800; color: #ff8a8a; margin-bottom: 16px; }
-        .metrics { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; background: rgba(0,0,0,0.2); padding: 12px; border-radius: 8px; margin-bottom: 16px; text-align: center; }
-        .metric-val { font-size: 12px; }
-        .empty { grid-column: 1/-1; text-align: center; padding: 50px; color: rgba(255,255,255,0.6); }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <h1>Create Per Náutico</h1>
-            <p>Scout • Elenco Intelligence</p>
-        </div>
-    </header>
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8"><meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-    <section class="filtros">
-        <input type="text" id="pesquisa" placeholder="Pesquisar atleta...">
-        <select id="posicao">
-            <option value="">Todas as posições</option>
-            <option value="Goleiro">Goleiro</option>
-            <option value="Defensor">Defensor</option>
-            <option value="Meio-Campista">Meio-Campista</option>
-            <option value="Atacante">Atacante</option>
-        </select>
-    </section>
+<title>Create Per | Náutico</title>
 
-    <main class="container">
-        <div id="grid" class="grid">
-            <div class="empty">Carregando dados...</div>
-        </div>
-    </main>
+<link rel="preconnect"
+    href="https://fonts.googleapis.com">
 
-    <script>
-        let elenco = [];
-        let scouts = [];
+<link rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
 
-        async function carregarDados() {
-            try {
-                const elencoUrl = 'https://raw.githubusercontent.com/creato-per/CREATE-PER-NAUTICO-/main/Elenco.json';
-                const dadosUrl = 'https://raw.githubusercontent.com/creato-per/CREATE-PER-NAUTICO-/main/Dados.json';
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
-                const [r1, r2] = await Promise.all([
-                    fetch(elencoUrl),
-                    fetch(dadosUrl)
-                ]);
+<style>
 
-                if (!r1.ok || !r2.ok) throw new Error('Erro ao carregar');
+    :root {
+        --primary: #990000;
+        --primary-dark: #660000;
+        --primary-light: #b31414;
 
-                elenco = (await r1.json()).atletas || [];
-                scouts = (await r2.json()).atletas || [];
+        --bg-main: #120303;
 
-                renderizar();
-            } catch(e) {
-                document.getElementById('grid').innerHTML = '<div class="empty">Erro ao carregar dados</div>';
-                console.error(e);
-            }
+        --bg-card: rgba(255, 255, 255, 0.03);
+        --bg-card-hover: rgba(255, 255, 255, 0.06);
+
+        --border: rgba(255, 255, 255, 0.1);
+        --border-focus: rgba(255, 255, 255, 0.3);
+
+        --text-main: #f9f9f9;
+        --text-muted: rgba(255, 255, 255, 0.6);
+
+        --accent: #e53935;
+    }
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    body {
+
+        background: var(--bg-main);
+
+        background-image:
+            radial-gradient(
+                circle at 50% 0%,
+                #300606 0%,
+                var(--bg-main) 70%
+            );
+
+        color: var(--text-main);
+
+        font-family:
+            'Inter',
+            system-ui,
+            -apple-system,
+            sans-serif;
+
+        min-height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+
+        -webkit-font-smoothing: antialiased;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+
+        padding: 40px 20px 20px;
+
+        max-width: 1200px;
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+
+    .logo h1 {
+
+        font-size: 32px;
+
+        font-weight: 800;
+
+        letter-spacing: -0.5px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #ffffff 0%,
+                #ff8a8a 100%
+            );
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+
+    .logo p {
+
+        margin-top: 4px;
+
+        font-size: 14px;
+
+        font-weight: 500;
+
+        color: var(--text-muted);
+
+        letter-spacing: 1px;
+
+        text-transform: uppercase;
+    }
+
+
+    /* =========================
+       FILTROS
+    ========================= */
+
+    .filtros {
+
+        max-width: 1200px;
+
+        width: 100%;
+
+        margin: 10px auto 30px;
+
+        padding: 0 20px;
+
+        display: flex;
+
+        gap: 16px;
+
+        flex-wrap: wrap;
+    }
+
+
+    input,
+    select {
+
+        background: var(--bg-card);
+
+        color: var(--text-main);
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 12px;
+
+        padding: 14px 18px;
+
+        font-size: 14px;
+
+        font-family: inherit;
+
+        outline: none;
+
+        backdrop-filter: blur(10px);
+
+        transition:
+            all 0.2s ease;
+    }
+
+
+    input:hover,
+    select:hover {
+
+        border-color:
+            var(--border-focus);
+
+        background:
+            rgba(255, 255, 255, 0.05);
+    }
+
+
+    input:focus,
+    select:focus {
+
+        border-color:
+            var(--accent);
+
+        box-shadow:
+            0 0 0 3px
+            rgba(229, 57, 53, 0.15);
+
+        background:
+            rgba(255, 255, 255, 0.06);
+    }
+
+
+    input {
+
+        flex: 1;
+
+        min-width: 260px;
+    }
+
+
+    select {
+
+        min-width: 220px;
+
+        cursor: pointer;
+    }
+
+
+    select option {
+
+        background: #1f0505;
+
+        color: var(--text-main);
+
+        padding: 10px;
+    }
+
+
+    input::placeholder {
+
+        color:
+            var(--text-muted);
+    }
+
+
+    /* =========================
+       CONTAINER
+    ========================= */
+
+    .container {
+
+        max-width: 1200px;
+
+        width: 100%;
+
+        margin: 0 auto;
+
+        padding:
+            0 20px 60px;
+
+        flex: 1;
+    }
+
+
+    /* =========================
+       GRID
+    ========================= */
+
+    .grid-cards {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                auto-fill,
+                minmax(360px, 1fr)
+            );
+
+        gap: 20px;
+    }
+
+
+    /* =========================
+       CARD
+    ========================= */
+
+    .card-atleta {
+
+        background:
+            var(--bg-card);
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 16px;
+
+        padding: 24px;
+
+        backdrop-filter:
+            blur(12px);
+
+        box-shadow:
+            0 10px 30px
+            rgba(0, 0, 0, 0.3);
+
+        transition:
+            all 0.2s ease;
+    }
+
+
+    .card-atleta:hover {
+
+        border-color:
+            var(--border-focus);
+
+        background:
+            var(--bg-card-hover);
+
+        transform:
+            translateY(-2px);
+    }
+
+
+    .card-header {
+
+        display: flex;
+
+        justify-content:
+            space-between;
+
+        align-items:
+            flex-start;
+
+        margin-bottom: 16px;
+    }
+
+
+    .card-info h3 {
+
+        font-size: 18px;
+
+        font-weight: 700;
+
+        color: #fff;
+
+        margin-bottom: 6px;
+    }
+
+
+    .posicao {
+
+        font-size: 11px;
+
+        font-weight: 600;
+
+        background:
+            rgba(255, 255, 255, 0.06);
+
+        border:
+            1px solid var(--border);
+
+        padding:
+            5px 10px;
+
+        border-radius: 20px;
+
+        letter-spacing: 0.5px;
+
+        display: inline-block;
+
+        color:
+            var(--text-muted);
+    }
+
+
+    .badge-geral {
+
+        font-size: 18px;
+
+        font-weight: 800;
+
+        background:
+            linear-gradient(
+                135deg,
+                #fff 0%,
+                #ff8a8a 100%
+            );
+
+        -webkit-background-clip: text;
+
+        -webkit-text-fill-color:
+            transparent;
+    }
+
+
+    /* =========================
+       MÉTRICAS
+    ========================= */
+
+    .card-metrics {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 10px;
+
+        background:
+            rgba(0, 0, 0, 0.2);
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 12px;
+
+        padding: 12px;
+
+        margin-bottom: 16px;
+
+        text-align: center;
+    }
+
+
+    .metric-item span {
+
+        display: block;
+
+        font-size: 10px;
+
+        text-transform:
+            uppercase;
+
+        letter-spacing:
+            0.8px;
+
+        color:
+            var(--text-muted);
+
+        margin-bottom: 4px;
+
+        font-weight: 600;
+    }
+
+
+    .metric-item strong {
+
+        font-size: 15px;
+
+        color: #fff;
+    }
+
+
+    /* =========================
+       DETAILS
+    ========================= */
+
+    details {
+
+        border-top:
+            1px solid var(--border);
+
+        padding-top: 14px;
+    }
+
+
+    summary {
+
+        font-size: 13px;
+
+        font-weight: 600;
+
+        color:
+            var(--accent);
+
+        cursor: pointer;
+
+        list-style: none;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content:
+            space-between;
+
+        user-select: none;
+
+        transition:
+            color 0.2s;
+    }
+
+
+    summary:hover {
+
+        color: #ff6b6b;
+    }
+
+
+    summary::after {
+
+        content: '▼';
+
+        font-size: 10px;
+
+        transition:
+            transform 0.2s ease;
+    }
+
+
+    details[open]
+    summary::after {
+
+        transform:
+            rotate(180deg);
+    }
+
+
+    .details-content {
+
+        margin-top: 14px;
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+
+        animation:
+            fadeIn 0.3s ease;
+    }
+
+
+    .stat-box {
+
+        background:
+            rgba(255, 255, 255, 0.02);
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 8px;
+
+        padding: 10px;
+    }
+
+
+    .stat-box span {
+
+        display: block;
+
+        font-size: 10px;
+
+        text-transform:
+            uppercase;
+
+        color:
+            var(--text-muted);
+
+        margin-bottom: 2px;
+    }
+
+
+    .stat-box strong {
+
+        font-size: 14px;
+
+        color: #fff;
+    }
+
+
+    @keyframes fadeIn {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                translateY(-4px);
         }
 
-        function pegarScout(nome) {
-            return scouts.find(s => s.nome.toLowerCase() === nome.toLowerCase()) || {
-                jogos: 0, participacao_em_gol: 0, bloqueio: 0, desarme: 0, chance_criada: 0, drible_certo: 0, chute: 0, chute_no_gol: 0
+        to {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+    }
+
+
+    /* =========================
+       EMPTY STATE
+    ========================= */
+
+    .empty-state {
+
+        grid-column:
+            1 / -1;
+
+        text-align: center;
+
+        padding: 50px;
+
+        color:
+            var(--text-muted);
+
+        font-style: italic;
+
+        background:
+            var(--bg-card);
+
+        border:
+            1px solid var(--border);
+
+        border-radius: 16px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+
+        max-width: 1200px;
+
+        width: 100%;
+
+        margin: 0 auto;
+
+        padding: 30px 20px;
+
+        border-top:
+            1px solid var(--border);
+
+        font-size: 13px;
+
+        color:
+            var(--text-muted);
+
+        display: flex;
+
+        justify-content:
+            space-between;
+
+        align-items: center;
+    }
+
+
+    /* =========================
+       FUNDO DO ANÚNCIO
+    ========================= */
+
+    .overlay-anuncio {
+
+        position: fixed;
+
+        inset: 0;
+
+        background:
+            rgba(0, 0, 0, 0.75);
+
+        backdrop-filter:
+            blur(4px);
+
+        z-index: 999998;
+
+        animation:
+            fadeOverlay 0.3s ease;
+    }
+
+
+    /* =========================
+       CAIXA DO ANÚNCIO
+    ========================= */
+
+    .anuncio-flutuante {
+
+        position: fixed;
+
+        top: 50%;
+
+        left: 50%;
+
+        transform:
+            translate(-50%, -50%);
+
+        width: 90vw;
+
+        max-width: 900px;
+
+        min-height: 400px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #250505,
+                #120303
+            );
+
+        border:
+            1px solid
+            rgba(255, 255, 255, 0.15);
+
+        border-radius: 24px;
+
+        padding: 40px;
+
+        z-index: 999999;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        box-shadow:
+            0 30px 100px
+            rgba(0, 0, 0, 0.9);
+
+        animation:
+            aparecerAnuncio
+            0.4s ease;
+    }
+
+
+    .conteudo-anuncio {
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        width: 100%;
+
+        min-height: 250px;
+
+        overflow: hidden;
+
+        border-radius: 12px;
+    }
+
+
+    /* =========================
+       BOTÃO FECHAR
+    ========================= */
+
+    .fechar-anuncio {
+
+        position: absolute;
+
+        top: 15px;
+
+        right: 15px;
+
+        width: 42px;
+
+        height: 42px;
+
+        border-radius: 50%;
+
+        border:
+            1px solid
+            rgba(255, 255, 255, 0.2);
+
+        background:
+            var(--primary);
+
+        color: white;
+
+        font-size: 20px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        z-index: 1000000;
+
+        transition:
+            all 0.2s ease;
+    }
+
+
+    .fechar-anuncio:hover {
+
+        background:
+            var(--accent);
+
+        transform:
+            scale(1.12);
+    }
+
+
+    /* =========================
+       ANIMAÇÕES
+    ========================= */
+
+    @keyframes fadeOverlay {
+
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+
+    @keyframes aparecerAnuncio {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                translate(-50%, -45%)
+                scale(0.95);
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                translate(-50%, -50%)
+                scale(1);
+        }
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 768px) {
+
+        header {
+
+            padding:
+                25px 20px 10px;
+        }
+
+
+        .logo h1 {
+
+            font-size: 26px;
+        }
+
+
+        .filtros {
+
+            padding:
+                0 16px;
+
+            gap: 12px;
+        }
+
+
+        .container {
+
+            padding:
+                0 16px 40px;
+        }
+
+
+        .grid-cards {
+
+            grid-template-columns:
+                1fr;
+        }
+
+
+        .anuncio-flutuante {
+
+            width: 94vw;
+
+            min-height: 330px;
+
+            padding:
+                45px 10px 20px;
+        }
+
+
+        .conteudo-anuncio {
+
+            transform:
+                scale(0.9);
+
+            transform-origin:
+                center;
+        }
+    }
+
+</style>
+
+</head><body><!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+
+        <h1>
+            Create Per Náutico
+        </h1>
+
+        <p>
+            Scout • Elenco Intelligence
+        </p>
+
+    </div>
+
+</header>
+
+
+
+<!-- FILTROS -->
+
+<section class="filtros">
+
+    <input
+        type="text"
+        id="pesquisa"
+        placeholder="Pesquisar atleta pelo nome..."
+    >
+
+
+    <select id="posicao">
+
+        <option value="">
+            Todas as posições
+        </option>
+
+        <option value="Goleiro">
+            Goleiro
+        </option>
+
+        <option value="Defensor">
+            Defensor
+        </option>
+
+        <option value="Meio-Campista">
+            Meio-Campista
+        </option>
+
+        <option value="Atacante">
+            Atacante
+        </option>
+
+    </select>
+
+</section>
+
+
+
+<!-- CARDS -->
+
+<main class="container">
+
+    <div
+        id="grid-cards"
+        class="grid-cards"
+    >
+
+        <div class="empty-state">
+
+            Carregando dados dos atletas...
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        &copy; 2026 Create Per Náutico
+        • Football Data Intelligence
+    </p>
+
+</footer>
+
+
+
+<!-- OVERLAY ESCURO -->
+
+<div
+    id="overlay-anuncio"
+    class="overlay-anuncio"
+></div>
+
+
+
+<!-- CAIXA FLUTUANTE -->
+
+<div
+    id="anuncio-flutuante"
+    class="anuncio-flutuante"
+>
+
+    <button
+        id="fechar-anuncio"
+        class="fechar-anuncio"
+        aria-label="Fechar anúncio"
+    >
+        ✕
+    </button>
+
+
+    <div class="conteudo-anuncio">
+
+
+        <!-- CÓDIGO DO ANÚNCIO -->
+
+        <script>
+
+            atOptions = {
+
+                'key' :
+                'f91292284fc8fd9b107d47a6e274fe79',
+
+                'format' :
+                'iframe',
+
+                'height' :
+                250,
+
+                'width' :
+                300,
+
+                'params' :
+                {}
+
             };
-        }
 
-        function renderizar() {
-            const grid = document.getElementById('grid');
-            const pesquisa = document.getElementById('pesquisa').value.toLowerCase();
-            const posicao = document.getElementById('posicao').value;
+        </script>
 
-            let filtrados = elenco.filter(j => {
-                const nomeOk = j.nome.toLowerCase().includes(pesquisa);
-                const posicaoOk = !posicao || j.posicao === posicao;
-                return nomeOk && posicaoOk;
-            });
 
-            if (!filtrados.length) {
-                grid.innerHTML = '<div class="empty">Nenhum atleta encontrado</div>';
-                return;
+        <script src="https://www.highrevenueformat.com/f91292284fc8fd9b107d47a6e274fe79/invoke.js"></script>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- JAVASCRIPT DO SCOUT -->
+
+<script>
+
+    let elenco = [];
+
+    let scouts = [];
+
+
+
+    async function carregarDados() {
+
+        try {
+
+            const [
+
+                respostaElenco,
+
+                respostaScout
+
+            ] = await Promise.all([
+
+                fetch("Elenco.json"),
+
+                fetch("Dados.json")
+
+            ]);
+
+
+
+            if (
+
+                !respostaElenco.ok ||
+
+                !respostaScout.ok
+
+            ) {
+
+                throw new Error(
+
+                    "Falha ao carregar os arquivos JSON."
+
+                );
+
             }
 
-            grid.innerHTML = filtrados.map(j => {
-                const s = pegarScout(j.nome);
-                const p = j.ultima_partida || {};
-                return `
-                    <div class="card">
-                        <h3>${j.nome}</h3>
-                        <div class="posicao">${j.posicao}</div>
-                        <div class="badge">${p.geral || 0}%</div>
-                        <div class="metrics">
-                            <div><small>P.A.</small><div class="metric-val">${p.participacao_ofensiva || 0}</div></div>
-                            <div><small>P.C.</small><div class="metric-val">${p.participacao_criativa || 0}</div></div>
-                            <div><small>P.O.</small><div class="metric-val">${p.participacao_defensiva || 0}</div></div>
-                        </div>
-                        <small><b>Jogos:</b> ${s.jogos} | <b>Part. Gol:</b> ${s.participacao_em_gol} | <b>Bloqueio:</b> ${s.bloqueio}</small>
-                    </div>
-                `;
-            }).join('');
+
+
+            const dadosElenco =
+                await respostaElenco.json();
+
+
+            const dadosScout =
+                await respostaScout.json();
+
+
+
+            elenco =
+                dadosElenco.atletas || [];
+
+
+            scouts =
+                dadosScout.atletas || [];
+
+
+
+            renderizar();
+
         }
 
-        document.getElementById('pesquisa').addEventListener('input', renderizar);
-        document.getElementById('posicao').addEventListener('change', renderizar);
 
-        carregarDados();
-    </script>
-</body>
-</html>
+        catch (erro) {
+
+            console.error(
+
+                "Erro ao carregar arquivos locais:",
+
+                erro
+
+            );
+
+
+
+            document
+                .getElementById(
+                    "grid-cards"
+                )
+                .innerHTML = `
+
+                <div
+                    class="empty-state"
+                    style="color:#ff8a8a;"
+                >
+
+                    Erro ao carregar os dados.
+
+                    Verifique se os arquivos
+
+                    <strong>
+                        Elenco.json
+                    </strong>
+
+                    e
+
+                    <strong>
+                        Dados.json
+                    </strong>
+
+                    estão na mesma pasta.
+
+                </div>
+
+            `;
+
+        }
+
+    }
+
+
+
+    function pegarScout(nome) {
+
+        return scouts.find(
+
+            jogador =>
+
+                jogador.nome
+                    .toLowerCase()
+
+                ===
+
+                nome
+                    .toLowerCase()
+
+        )
+
+        ||
+
+        {
+
+            jogos: 0,
+
+            participacao_em_gol: 0,
+
+            bloqueio: 0,
+
+            desarme: 0,
+
+            chance_criada: 0,
+
+            drible_certo: 0,
+
+            chute: 0,
+
+            chute_no_gol: 0
+
+        };
+
+    }
+
+
+
+    function renderizar() {
+
+        const grid =
+
+            document.getElementById(
+
+                "grid-cards"
+
+            );
+
+
+
+        const pesquisa =
+
+            document
+                .getElementById(
+                    "pesquisa"
+                )
+                .value
+                .toLowerCase()
+                .trim();
+
+
+
+        const filtroPosicao =
+
+            document
+                .getElementById(
+                    "posicao"
+                )
+                .value;
+
+
+
+        grid.innerHTML = "";
+
+
+
+        const jogadoresFiltrados =
+
+            elenco.filter(
+
+                jogador => {
+
+                    const nome =
+
+                        jogador.nome
+                            .toLowerCase();
+
+
+
+                    const passaPesquisa =
+
+                        nome.includes(
+                            pesquisa
+                        );
+
+
+
+                    const passaPosicao =
+
+                        filtroPosicao === ""
+
+                        ||
+
+                        jogador.posicao ===
+
+                        filtroPosicao;
+
+
+
+                    return
+
+                        passaPesquisa
+
+                        &&
+
+                        passaPosicao;
+
+                }
+
+            );
+
+
+
+        if (
+
+            jogadoresFiltrados.length === 0
+
+        ) {
+
+            grid.innerHTML = `
+
+                <div class="empty-state">
+
+                    Nenhum atleta encontrado.
+
+                </div>
+
+            `;
+
+
+            return;
+
+        }
+
+
+
+        jogadoresFiltrados.forEach(
+
+            jogador => {
+
+                const scout =
+
+                    pegarScout(
+
+                        jogador.nome
+
+                    );
+
+
+
+                const partida =
+
+                    jogador.ultima_partida
+
+                    ||
+
+                    {};
+
+
+
+                const defensiva =
+
+                    partida.participacao_defensiva
+
+                    ||
+
+                    0;
+
+
+
+                const criativa =
+
+                    partida.participacao_criativa
+
+                    ||
+
+                    0;
+
+
+
+                const ofensiva =
+
+                    partida.participacao_ofensiva
+
+                    ||
+
+                    0;
+
+
+
+                const geral =
+
+                    partida.geral
+
+                    ||
+
+                    0;
+
+
+
+                grid.innerHTML += `
+
+
+                    <div class="card-atleta">
+
+
+                        <div class="card-header">
+
+
+                            <div class="card-info">
+
+
+                                <h3>
+
+                                    ${jogador.nome}
+
+                                </h3>
+
+
+                                <span
+                                    class="posicao"
+                                >
+
+                                    ${jogador.posicao}
+
+                                </span>
+
+
+                            </div>
+
+
+                            <div
+                                class="badge-geral"
+                            >
+
+                                ${geral}%
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div
+                            class="card-metrics"
+                        >
+
+
+                            <div
+                                class="metric-item"
+                            >
+
+                                <span>
+                                    P.A.
+                                </span>
+
+                                <strong>
+
+                                    ${ofensiva}
+
+                                </strong>
+
+                            </div>
+
+
+
+                            <div
+                                class="metric-item"
+                            >
+
+                                <span>
+                                    P.C.
+                                </span>
+
+                                <strong>
+
+                                    ${criativa}
+
+                                </strong>
+
+                            </div>
+
+
+
+                            <div
+                                class="metric-item"
+                            >
+
+                                <span>
+                                    P.O.
+                                </span>
+
+                                <strong>
+
+                                    ${defensiva}
+
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <details>
+
+
+                            <summary>
+
+                                Ficha completa
+                                *Dados.json
+
+                            </summary>
+
+
+
+                            <div
+                                class="details-content"
+                            >
+
+
+                                <div
+                                    class="stat-box"
+                                >
+
+                                    <span>
+                                        Jogos
+                                    </span>
+
+                                    <strong>
+
+                                        ${scout.jogos}
+
+                                    </strong>
+
+                                </div>
+
+
+
+                                <div
+                                    class="stat-box"
+                                >
+
+                                    <span>
+                                        Part. Gol
+                                    </span>
+
+                                    <strong>
+
+                                        ${scout.participacao_em_gol}
+
+                                    </strong>
+
+                                </div>
+
+
+
+                                <div
+                                    class="stat-box"
+                                >
+
+                                    <span>
+                                        Bloqueio
+                                    </span>
+
+                                    <strong>
+
+                                        ${scout.bloqueio}
+
+                                    </strong>
+
+                                </div>
+
+
+
+                                <div
+                                    class="stat-box"
+                                >
+
+                                    <span>
+                                        Desarme
+                                    </span>
+
+                                    <strong>
+
+                                        ${scout.desarme}
+
+                                    </strong>
+
+                                </div>
+
+
+
+                                <div
+                                    class="stat-box"
+                                >
+
+                                    <span>
+                                        Chance Criada
+                                    </span>
+
+                                    <strong>
+
+                                        ${scout.chance_criada}
+
+                                    </strong>
+
+                                </div>
+
+
+
+                                <div
+                                    class="stat-box"
+                                >
+
+                                    <span>
+                                        Drible Certo
+                                    </span>
+
+                                    <strong>
+
+                                        ${scout.drible_certo}
+
+                                    </strong>
+
+                                </div>
+
+
+
+                                <div
+                                    class="stat-box"
+                                >
+
+                                    <span>
+                                        Chute
+                                    </span>
+
+                                    <strong>
+
+                                        ${scout.chute}
+
+                                    </strong>
+
+                                </div>
+
+
+
+                                <div
+                                    class="stat-box"
+                                >
+
+                                    <span>
+                                        Chute no Gol
+                                    </span>
+
+                                    <strong>
+
+                                        ${scout.chute_no_gol}
+
+                                    </strong>
+
+                                </div>
+
+
+                            </div>
+
+
+                        </details>
+
+
+                    </div>
+
+                `;
+
+            }
+
+        );
+
+    }
+
+
+
+    document
+        .getElementById(
+            "pesquisa"
+        )
+        .addEventListener(
+
+            "input",
+
+            renderizar
+
+        );
+
+
+
+    document
+        .getElementById(
+            "posicao"
+        )
+        .addEventListener(
+
+            "change",
+
+            renderizar
+
+        );
+
+
+
+    carregarDados();
+
+</script>
+
+
+
+<!-- FECHAR ANÚNCIO -->
+
+<script>
+
+    document
+        .getElementById(
+            "fechar-anuncio"
+        )
+        .addEventListener(
+
+            "click",
+
+            function () {
+
+
+                const anuncio =
+
+                    document.getElementById(
+
+                        "anuncio-flutuante"
+
+                    );
+
+
+                const overlay =
+
+                    document.getElementById(
+
+                        "overlay-anuncio"
+
+                    );
+
+
+
+                anuncio.style.opacity = "0";
+
+                anuncio.style.transform =
+
+                    "translate(-50%, -45%) scale(0.95)";
+
+
+                overlay.style.opacity = "0";
+
+
+
+                setTimeout(
+
+                    () => {
+
+                        anuncio.remove();
+
+                        overlay.remove();
+
+                    },
+
+                    300
+
+                );
+
+            }
+
+        );
+
+</script>
+
+</body></html>
