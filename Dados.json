@@ -1,0 +1,38 @@
+{
+  "ultima_atualizacao": "2026-08-29",
+  "atletas": [
+    {
+      "nome": "Nikollas",
+      "jogos": 0,
+      "participacao_em_gol": 0,
+      "bloqueio": 0,
+      "desarme": 0,
+      "chance_criada": 0,
+      "drible_certo": 0,
+      "chute": 0,
+      "chute_no_gol": 0
+    },
+    {
+      "nome": "Mão",
+      "jogos": 0,
+      "participacao_em_gol": 0,
+      "bloqueio": 0,
+      "desarme": 0,
+      "chance_criada": 0,
+      "drible_certo": 0,
+      "chute": 0,
+      "chute_no_gol": 0
+    },
+    {
+      "nome": "Pietro",
+      "jogos": 0,
+      "participacao_em_gol": 0,
+      "bloqueio": 0,
+      "desarme": 0,
+      "chance_criada": 0,
+      "drible_certo": 0,
+      "chute": 0,
+      "chute_no_gol": 0
+    }
+  ]
+}
