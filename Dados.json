@@ -2,6 +2,38 @@
   "ultima_atualizacao": "2026-08-29",
   "atletas": [
     {
+      "nome": "Pedro Ricardo",
+      "jogos": 1,
+      "participacao_em_gol": 0,
+      "bloqueio": 2,
+      "desarme": 1,
+      "chance_criada": 1,
+      "drible_certo": 0,
+      "chute": 1,
+      "chute_no_gol": 0
+    },
+    {
+      "nome": "Gledson",
+      "jogos": 1,
+      "participacao_em_gol": 1,
+      "bloqueio": 3,
+      "desarme": 1,
+      "chance_criada": 1,
+      "drible_certo": 0,
+      "chute": 1,
+      "chute_no_gol": 0
+    },
+    {
+      "nome": "",
+      "jogos": 0,
+      "participacao_em_gol": 0,
+      "bloqueio": 0,
+      "desarme": 0,
+      "chance_criada": 0,
+      "drible_certo": 0,
+      "chute": 0,
+      "chute_no_gol": 0
+    },{
       "nome": "Nikollas",
       "jogos": 0,
       "participacao_em_gol": 0,
