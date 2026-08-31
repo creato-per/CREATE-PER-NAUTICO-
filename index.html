@@ -1,74 +1,113 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
-    <meta charset="UTF-8"><meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Create Per | Náutico</title>
 
-<link rel="preconnect"
-    href="https://fonts.googleapis.com">
 
-<link rel="preconnect"
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
     href="https://fonts.gstatic.com"
-    crossorigin>
+    crossorigin
+>
 
 <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
+    rel="stylesheet"
+>
+
 
 <style>
 
     :root {
+
         --primary: #990000;
         --primary-dark: #660000;
         --primary-light: #b31414;
 
         --bg-main: #120303;
 
-        --bg-card: rgba(255, 255, 255, 0.03);
-        --bg-card-hover: rgba(255, 255, 255, 0.06);
+        --bg-card:
+            rgba(255, 255, 255, 0.03);
 
-        --border: rgba(255, 255, 255, 0.1);
-        --border-focus: rgba(255, 255, 255, 0.3);
+        --bg-card-hover:
+            rgba(255, 255, 255, 0.06);
+
+        --border:
+            rgba(255, 255, 255, 0.1);
+
+        --border-focus:
+            rgba(255, 255, 255, 0.3);
 
         --text-main: #f9f9f9;
-        --text-muted: rgba(255, 255, 255, 0.6);
+
+        --text-muted:
+            rgba(255, 255, 255, 0.6);
 
         --accent: #e53935;
+
     }
 
 
     * {
+
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+
     }
 
 
     body {
 
-        background: var(--bg-main);
+        background:
+            var(--bg-main);
 
         background-image:
+
             radial-gradient(
+
                 circle at 50% 0%,
+
                 #300606 0%,
+
                 var(--bg-main) 70%
+
             );
 
-        color: var(--text-main);
+        color:
+            var(--text-main);
 
         font-family:
+
             'Inter',
+
             system-ui,
+
             -apple-system,
+
             sans-serif;
 
-        min-height: 100vh;
+        min-height:
+            100vh;
 
-        display: flex;
-        flex-direction: column;
+        display:
+            flex;
 
-        -webkit-font-smoothing: antialiased;
+        flex-direction:
+            column;
+
+        -webkit-font-smoothing:
+            antialiased;
+
     }
 
 
@@ -78,48 +117,73 @@
 
     header {
 
-        padding: 40px 20px 20px;
+        padding:
+            40px 20px 20px;
 
-        max-width: 1200px;
-        width: 100%;
+        max-width:
+            1200px;
 
-        margin: 0 auto;
+        width:
+            100%;
+
+        margin:
+            0 auto;
+
     }
 
 
     .logo h1 {
 
-        font-size: 32px;
+        font-size:
+            32px;
 
-        font-weight: 800;
+        font-weight:
+            800;
 
-        letter-spacing: -0.5px;
+        letter-spacing:
+            -0.5px;
 
         background:
+
             linear-gradient(
+
                 135deg,
+
                 #ffffff 0%,
+
                 #ff8a8a 100%
+
             );
 
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        -webkit-background-clip:
+            text;
+
+        -webkit-text-fill-color:
+            transparent;
+
     }
 
 
     .logo p {
 
-        margin-top: 4px;
+        margin-top:
+            4px;
 
-        font-size: 14px;
+        font-size:
+            14px;
 
-        font-weight: 500;
+        font-weight:
+            500;
 
-        color: var(--text-muted);
+        color:
+            var(--text-muted);
 
-        letter-spacing: 1px;
+        letter-spacing:
+            1px;
 
-        text-transform: uppercase;
+        text-transform:
+            uppercase;
+
     }
 
 
@@ -129,46 +193,65 @@
 
     .filtros {
 
-        max-width: 1200px;
+        max-width:
+            1200px;
 
-        width: 100%;
+        width:
+            100%;
 
-        margin: 10px auto 30px;
+        margin:
+            10px auto 30px;
 
-        padding: 0 20px;
+        padding:
+            0 20px;
 
-        display: flex;
+        display:
+            flex;
 
-        gap: 16px;
+        gap:
+            16px;
 
-        flex-wrap: wrap;
+        flex-wrap:
+            wrap;
+
     }
 
 
     input,
     select {
 
-        background: var(--bg-card);
+        background:
+            var(--bg-card);
 
-        color: var(--text-main);
+        color:
+            var(--text-main);
 
         border:
-            1px solid var(--border);
 
-        border-radius: 12px;
+            1px solid
+            var(--border);
 
-        padding: 14px 18px;
+        border-radius:
+            12px;
 
-        font-size: 14px;
+        padding:
+            14px 18px;
 
-        font-family: inherit;
+        font-size:
+            14px;
 
-        outline: none;
+        font-family:
+            inherit;
 
-        backdrop-filter: blur(10px);
+        outline:
+            none;
+
+        backdrop-filter:
+            blur(10px);
 
         transition:
             all 0.2s ease;
+
     }
 
 
@@ -180,6 +263,7 @@
 
         background:
             rgba(255, 255, 255, 0.05);
+
     }
 
 
@@ -190,37 +274,61 @@
             var(--accent);
 
         box-shadow:
+
             0 0 0 3px
-            rgba(229, 57, 53, 0.15);
+
+            rgba(
+                229,
+                57,
+                53,
+                0.15
+            );
 
         background:
-            rgba(255, 255, 255, 0.06);
+
+            rgba(
+                255,
+                255,
+                255,
+                0.06
+            );
+
     }
 
 
     input {
 
-        flex: 1;
+        flex:
+            1;
 
-        min-width: 260px;
+        min-width:
+            260px;
+
     }
 
 
     select {
 
-        min-width: 220px;
+        min-width:
+            220px;
 
-        cursor: pointer;
+        cursor:
+            pointer;
+
     }
 
 
     select option {
 
-        background: #1f0505;
+        background:
+            #1f0505;
 
-        color: var(--text-main);
+        color:
+            var(--text-main);
 
-        padding: 10px;
+        padding:
+            10px;
+
     }
 
 
@@ -228,6 +336,7 @@
 
         color:
             var(--text-muted);
+
     }
 
 
@@ -237,16 +346,21 @@
 
     .container {
 
-        max-width: 1200px;
+        max-width:
+            1200px;
 
-        width: 100%;
+        width:
+            100%;
 
-        margin: 0 auto;
+        margin:
+            0 auto;
 
         padding:
             0 20px 60px;
 
-        flex: 1;
+        flex:
+            1;
+
     }
 
 
@@ -256,15 +370,25 @@
 
     .grid-cards {
 
-        display: grid;
+        display:
+            grid;
 
         grid-template-columns:
+
             repeat(
+
                 auto-fill,
-                minmax(360px, 1fr)
+
+                minmax(
+                    360px,
+                    1fr
+                )
+
             );
 
-        gap: 20px;
+        gap:
+            20px;
+
     }
 
 
@@ -278,21 +402,33 @@
             var(--bg-card);
 
         border:
-            1px solid var(--border);
 
-        border-radius: 16px;
+            1px solid
+            var(--border);
 
-        padding: 24px;
+        border-radius:
+            16px;
+
+        padding:
+            24px;
 
         backdrop-filter:
             blur(12px);
 
         box-shadow:
+
             0 10px 30px
-            rgba(0, 0, 0, 0.3);
+
+            rgba(
+                0,
+                0,
+                0,
+                0.3
+            );
 
         transition:
             all 0.2s ease;
+
     }
 
 
@@ -306,12 +442,14 @@
 
         transform:
             translateY(-2px);
+
     }
 
 
     .card-header {
 
-        display: flex;
+        display:
+            flex;
 
         justify-content:
             space-between;
@@ -319,65 +457,95 @@
         align-items:
             flex-start;
 
-        margin-bottom: 16px;
+        margin-bottom:
+            16px;
+
     }
 
 
     .card-info h3 {
 
-        font-size: 18px;
+        font-size:
+            18px;
 
-        font-weight: 700;
+        font-weight:
+            700;
 
-        color: #fff;
+        color:
+            #fff;
 
-        margin-bottom: 6px;
+        margin-bottom:
+            6px;
+
     }
 
 
     .posicao {
 
-        font-size: 11px;
+        font-size:
+            11px;
 
-        font-weight: 600;
+        font-weight:
+            600;
 
         background:
-            rgba(255, 255, 255, 0.06);
+
+            rgba(
+                255,
+                255,
+                255,
+                0.06
+            );
 
         border:
-            1px solid var(--border);
+
+            1px solid
+            var(--border);
 
         padding:
             5px 10px;
 
-        border-radius: 20px;
+        border-radius:
+            20px;
 
-        letter-spacing: 0.5px;
+        letter-spacing:
+            0.5px;
 
-        display: inline-block;
+        display:
+            inline-block;
 
         color:
             var(--text-muted);
+
     }
 
 
     .badge-geral {
 
-        font-size: 18px;
+        font-size:
+            18px;
 
-        font-weight: 800;
+        font-weight:
+            800;
 
         background:
+
             linear-gradient(
+
                 135deg,
+
                 #fff 0%,
+
                 #ff8a8a 100%
+
             );
 
-        -webkit-background-clip: text;
+        -webkit-background-clip:
+            text;
 
         -webkit-text-fill-color:
             transparent;
+
     }
 
 
@@ -387,34 +555,51 @@
 
     .card-metrics {
 
-        display: grid;
+        display:
+            grid;
 
         grid-template-columns:
             repeat(3, 1fr);
 
-        gap: 10px;
+        gap:
+            10px;
 
         background:
-            rgba(0, 0, 0, 0.2);
+
+            rgba(
+                0,
+                0,
+                0,
+                0.2
+            );
 
         border:
-            1px solid var(--border);
 
-        border-radius: 12px;
+            1px solid
+            var(--border);
 
-        padding: 12px;
+        border-radius:
+            12px;
 
-        margin-bottom: 16px;
+        padding:
+            12px;
 
-        text-align: center;
+        margin-bottom:
+            16px;
+
+        text-align:
+            center;
+
     }
 
 
     .metric-item span {
 
-        display: block;
+        display:
+            block;
 
-        font-size: 10px;
+        font-size:
+            10px;
 
         text-transform:
             uppercase;
@@ -425,17 +610,23 @@
         color:
             var(--text-muted);
 
-        margin-bottom: 4px;
+        margin-bottom:
+            4px;
 
-        font-weight: 600;
+        font-weight:
+            600;
+
     }
 
 
     .metric-item strong {
 
-        font-size: 15px;
+        font-size:
+            15px;
 
-        color: #fff;
+        color:
+            #fff;
+
     }
 
 
@@ -446,53 +637,70 @@
     details {
 
         border-top:
-            1px solid var(--border);
 
-        padding-top: 14px;
+            1px solid
+            var(--border);
+
+        padding-top:
+            14px;
+
     }
 
 
     summary {
 
-        font-size: 13px;
+        font-size:
+            13px;
 
-        font-weight: 600;
+        font-weight:
+            600;
 
         color:
             var(--accent);
 
-        cursor: pointer;
+        cursor:
+            pointer;
 
-        list-style: none;
+        list-style:
+            none;
 
-        display: flex;
+        display:
+            flex;
 
-        align-items: center;
+        align-items:
+            center;
 
         justify-content:
             space-between;
 
-        user-select: none;
+        user-select:
+            none;
 
         transition:
             color 0.2s;
+
     }
 
 
     summary:hover {
 
-        color: #ff6b6b;
+        color:
+            #ff6b6b;
+
     }
 
 
     summary::after {
 
-        content: '▼';
+        content:
+            '▼';
 
-        font-size: 10px;
+        font-size:
+            10px;
 
         transition:
             transform 0.2s ease;
+
     }
 
 
@@ -501,44 +709,62 @@
 
         transform:
             rotate(180deg);
+
     }
 
 
     .details-content {
 
-        margin-top: 14px;
+        margin-top:
+            14px;
 
-        display: grid;
+        display:
+            grid;
 
         grid-template-columns:
             repeat(2, 1fr);
 
-        gap: 10px;
+        gap:
+            10px;
 
         animation:
             fadeIn 0.3s ease;
+
     }
 
 
     .stat-box {
 
         background:
-            rgba(255, 255, 255, 0.02);
+
+            rgba(
+                255,
+                255,
+                255,
+                0.02
+            );
 
         border:
-            1px solid var(--border);
 
-        border-radius: 8px;
+            1px solid
+            var(--border);
 
-        padding: 10px;
+        border-radius:
+            8px;
+
+        padding:
+            10px;
+
     }
 
 
     .stat-box span {
 
-        display: block;
+        display:
+            block;
 
-        font-size: 10px;
+        font-size:
+            10px;
 
         text-transform:
             uppercase;
@@ -546,15 +772,20 @@
         color:
             var(--text-muted);
 
-        margin-bottom: 2px;
+        margin-bottom:
+            2px;
+
     }
 
 
     .stat-box strong {
 
-        font-size: 14px;
+        font-size:
+            14px;
 
-        color: #fff;
+        color:
+            #fff;
+
     }
 
 
@@ -562,19 +793,24 @@
 
         from {
 
-            opacity: 0;
+            opacity:
+                0;
 
             transform:
                 translateY(-4px);
+
         }
 
         to {
 
-            opacity: 1;
+            opacity:
+                1;
 
             transform:
                 translateY(0);
+
         }
+
     }
 
 
@@ -587,22 +823,29 @@
         grid-column:
             1 / -1;
 
-        text-align: center;
+        text-align:
+            center;
 
-        padding: 50px;
+        padding:
+            50px;
 
         color:
             var(--text-muted);
 
-        font-style: italic;
+        font-style:
+            italic;
 
         background:
             var(--bg-card);
 
         border:
-            1px solid var(--border);
 
-        border-radius: 16px;
+            1px solid
+            var(--border);
+
+        border-radius:
+            16px;
+
     }
 
 
@@ -612,28 +855,38 @@
 
     footer {
 
-        max-width: 1200px;
+        max-width:
+            1200px;
 
-        width: 100%;
+        width:
+            100%;
 
-        margin: 0 auto;
+        margin:
+            0 auto;
 
-        padding: 30px 20px;
+        padding:
+            30px 20px;
 
         border-top:
-            1px solid var(--border);
 
-        font-size: 13px;
+            1px solid
+            var(--border);
+
+        font-size:
+            13px;
 
         color:
             var(--text-muted);
 
-        display: flex;
+        display:
+            flex;
 
         justify-content:
             space-between;
 
-        align-items: center;
+        align-items:
+            center;
+
     }
 
 
@@ -643,20 +896,30 @@
 
     .overlay-anuncio {
 
-        position: fixed;
+        position:
+            fixed;
 
-        inset: 0;
+        inset:
+            0;
 
         background:
-            rgba(0, 0, 0, 0.75);
+
+            rgba(
+                0,
+                0,
+                0,
+                0.75
+            );
 
         backdrop-filter:
             blur(4px);
 
-        z-index: 999998;
+        z-index:
+            999998;
 
         animation:
             fadeOverlay 0.3s ease;
+
     }
 
 
@@ -666,69 +929,111 @@
 
     .anuncio-flutuante {
 
-        position: fixed;
+        position:
+            fixed;
 
-        top: 50%;
+        top:
+            50%;
 
-        left: 50%;
+        left:
+            50%;
 
         transform:
             translate(-50%, -50%);
 
-        width: 90vw;
+        width:
+            90vw;
 
-        max-width: 900px;
+        max-width:
+            900px;
 
-        min-height: 400px;
+        min-height:
+            400px;
 
         background:
+
             linear-gradient(
+
                 135deg,
+
                 #250505,
+
                 #120303
+
             );
 
         border:
+
             1px solid
-            rgba(255, 255, 255, 0.15);
 
-        border-radius: 24px;
+            rgba(
+                255,
+                255,
+                255,
+                0.15
+            );
 
-        padding: 40px;
+        border-radius:
+            24px;
 
-        z-index: 999999;
+        padding:
+            40px;
 
-        display: flex;
+        z-index:
+            999999;
 
-        justify-content: center;
+        display:
+            flex;
 
-        align-items: center;
+        justify-content:
+            center;
+
+        align-items:
+            center;
 
         box-shadow:
+
             0 30px 100px
-            rgba(0, 0, 0, 0.9);
+
+            rgba(
+                0,
+                0,
+                0,
+                0.9
+            );
 
         animation:
+
             aparecerAnuncio
+
             0.4s ease;
+
     }
 
 
     .conteudo-anuncio {
 
-        display: flex;
+        display:
+            flex;
 
-        justify-content: center;
+        justify-content:
+            center;
 
-        align-items: center;
+        align-items:
+            center;
 
-        width: 100%;
+        width:
+            100%;
 
-        min-height: 250px;
+        min-height:
+            250px;
 
-        overflow: hidden;
+        overflow:
+            hidden;
 
-        border-radius: 12px;
+        border-radius:
+            12px;
+
     }
 
 
@@ -738,43 +1043,65 @@
 
     .fechar-anuncio {
 
-        position: absolute;
+        position:
+            absolute;
 
-        top: 15px;
+        top:
+            15px;
 
-        right: 15px;
+        right:
+            15px;
 
-        width: 42px;
+        width:
+            42px;
 
-        height: 42px;
+        height:
+            42px;
 
-        border-radius: 50%;
+        border-radius:
+            50%;
 
         border:
+
             1px solid
-            rgba(255, 255, 255, 0.2);
+
+            rgba(
+                255,
+                255,
+                255,
+                0.2
+            );
 
         background:
             var(--primary);
 
-        color: white;
+        color:
+            white;
 
-        font-size: 20px;
+        font-size:
+            20px;
 
-        font-weight: bold;
+        font-weight:
+            bold;
 
-        cursor: pointer;
+        cursor:
+            pointer;
 
-        display: flex;
+        display:
+            flex;
 
-        align-items: center;
+        align-items:
+            center;
 
-        justify-content: center;
+        justify-content:
+            center;
 
-        z-index: 1000000;
+        z-index:
+            1000000;
 
         transition:
             all 0.2s ease;
+
     }
 
 
@@ -785,6 +1112,7 @@
 
         transform:
             scale(1.12);
+
     }
 
 
@@ -795,12 +1123,19 @@
     @keyframes fadeOverlay {
 
         from {
-            opacity: 0;
+
+            opacity:
+                0;
+
         }
 
         to {
-            opacity: 1;
+
+            opacity:
+                1;
+
         }
+
     }
 
 
@@ -808,21 +1143,36 @@
 
         from {
 
-            opacity: 0;
+            opacity:
+                0;
 
             transform:
-                translate(-50%, -45%)
+
+                translate(
+                    -50%,
+                    -45%
+                )
+
                 scale(0.95);
+
         }
 
         to {
 
-            opacity: 1;
+            opacity:
+                1;
 
             transform:
-                translate(-50%, -50%)
+
+                translate(
+                    -50%,
+                    -50%
+                )
+
                 scale(1);
+
         }
+
     }
 
 
@@ -836,12 +1186,15 @@
 
             padding:
                 25px 20px 10px;
+
         }
 
 
         .logo h1 {
 
-            font-size: 26px;
+            font-size:
+                26px;
+
         }
 
 
@@ -850,7 +1203,9 @@
             padding:
                 0 16px;
 
-            gap: 12px;
+            gap:
+                12px;
+
         }
 
 
@@ -858,6 +1213,7 @@
 
             padding:
                 0 16px 40px;
+
         }
 
 
@@ -865,17 +1221,21 @@
 
             grid-template-columns:
                 1fr;
+
         }
 
 
         .anuncio-flutuante {
 
-            width: 94vw;
+            width:
+                94vw;
 
-            min-height: 330px;
+            min-height:
+                330px;
 
             padding:
                 45px 10px 20px;
+
         }
 
 
@@ -886,7 +1246,9 @@
 
             transform-origin:
                 center;
+
         }
+
     }
 
 </style>
@@ -908,7 +1270,6 @@
     </div>
 
 </header>
-
 
 
 <!-- FILTROS -->
@@ -949,7 +1310,6 @@
 </section>
 
 
-
 <!-- CARDS -->
 
 <main class="container">
@@ -970,18 +1330,19 @@
 </main>
 
 
-
 <!-- FOOTER -->
 
 <footer>
 
     <p>
-        &copy; 2026 Create Per Náutico
+
+        &copy; 2026
+        Create Per Náutico
         • Football Data Intelligence
+
     </p>
 
 </footer>
-
 
 
 <!-- OVERLAY ESCURO -->
@@ -990,7 +1351,6 @@
     id="overlay-anuncio"
     class="overlay-anuncio"
 ></div>
-
 
 
 <!-- CAIXA FLUTUANTE -->
@@ -1005,7 +1365,9 @@
         class="fechar-anuncio"
         aria-label="Fechar anúncio"
     >
+
         ✕
+
     </button>
 
 
@@ -1018,20 +1380,20 @@
 
             atOptions = {
 
-                'key' :
-                'f91292284fc8fd9b107d47a6e274fe79',
+                'key':
+                    'f91292284fc8fd9b107d47a6e274fe79',
 
-                'format' :
-                'iframe',
+                'format':
+                    'iframe',
 
-                'height' :
-                250,
+                'height':
+                    250,
 
-                'width' :
-                300,
+                'width':
+                    300,
 
-                'params' :
-                {}
+                'params':
+                    {}
 
             };
 
@@ -1046,7 +1408,6 @@
 </div>
 
 
-
 <!-- JAVASCRIPT DO SCOUT -->
 
 <script>
@@ -1056,61 +1417,330 @@
     let scouts = [];
 
 
+    /* =========================
+       FONTES DOS DADOS
+    ========================= */
+
+    const fontes = {
+
+        elenco: [
+
+            "https://raw.githubusercontent.com/creato-per/CREATE-PER-NAUTICO-/main/Elenco.json",
+
+            "Elenco.json",
+
+            "elenco.json"
+
+        ],
+
+
+        dados: [
+
+            "https://raw.githubusercontent.com/creato-per/CREATE-PER-NAUTICO-/main/Dados.json",
+
+            "Dados.json",
+
+            "dados.json"
+
+        ]
+
+    };
+
+
+    /* =========================
+       NORMALIZAR TEXTO
+    ========================= */
+
+    function normalizarTexto(texto) {
+
+        return String(
+            texto || ""
+        )
+
+        .normalize(
+            "NFD"
+        )
+
+        .replace(
+            /[\u0300-\u036f]/g,
+            ""
+        )
+
+        .trim()
+
+        .toLowerCase();
+
+    }
+
+
+    /* =========================
+       BUSCAR COM FALLBACK
+    ========================= */
+
+    async function buscarComFallback(listaDeURLs) {
+
+        let ultimoErro;
+
+
+        for (
+
+            const url
+
+            of
+
+            listaDeURLs
+
+        ) {
+
+            try {
+
+                console.log(
+
+                    "Tentando carregar:",
+
+                    url
+
+                );
+
+
+                const resposta =
+
+                    await fetch(
+
+                        url,
+
+                        {
+
+                            cache:
+                                "no-store"
+
+                        }
+
+                    );
+
+
+                if (
+
+                    !resposta.ok
+
+                ) {
+
+                    throw new Error(
+
+                        `HTTP ${resposta.status}`
+
+                    );
+
+                }
+
+
+                const dados =
+
+                    await resposta.json();
+
+
+                console.log(
+
+                    "Dados carregados com sucesso:",
+
+                    url
+
+                );
+
+
+                return dados;
+
+            }
+
+
+            catch (erro) {
+
+                console.warn(
+
+                    "Falha ao carregar:",
+
+                    url,
+
+                    erro
+
+                );
+
+
+                ultimoErro =
+                    erro;
+
+            }
+
+        }
+
+
+        throw new Error(
+
+            "Nenhuma fonte respondeu corretamente. " +
+
+            (
+
+                ultimoErro
+
+                ? ultimoErro.message
+
+                : ""
+
+            )
+
+        );
+
+    }
+
+
+    /* =========================
+       CARREGAR DADOS
+    ========================= */
 
     async function carregarDados() {
+
+        const grid =
+
+            document.getElementById(
+
+                "grid-cards"
+
+            );
+
+
+        grid.innerHTML = `
+
+            <div class="empty-state">
+
+                Carregando dados dos atletas...
+
+            </div>
+
+        `;
+
 
         try {
 
             const [
 
-                respostaElenco,
+                dadosElenco,
 
-                respostaScout
+                dadosScout
 
-            ] = await Promise.all([
+            ] =
 
-                fetch("Elenco.json"),
+            await Promise.all([
 
-                fetch("Dados.json")
+                buscarComFallback(
+
+                    fontes.elenco
+
+                ),
+
+                buscarComFallback(
+
+                    fontes.dados
+
+                )
 
             ]);
 
 
+            /* =========================
+               VALIDAR ELENCO
+            ========================= */
 
             if (
 
-                !respostaElenco.ok ||
+                !dadosElenco
 
-                !respostaScout.ok
+                ||
+
+                !Array.isArray(
+
+                    dadosElenco.atletas
+
+                )
 
             ) {
 
                 throw new Error(
 
-                    "Falha ao carregar os arquivos JSON."
+                    "Os dados do elenco não possuem um array válido chamado 'atletas'."
 
                 );
 
             }
 
 
+            /* =========================
+               VALIDAR SCOUT
+            ========================= */
 
-            const dadosElenco =
-                await respostaElenco.json();
+            if (
 
+                !dadosScout
 
-            const dadosScout =
-                await respostaScout.json();
+                ||
 
+                !Array.isArray(
+
+                    dadosScout.atletas
+
+                )
+
+            ) {
+
+                throw new Error(
+
+                    "Os dados do scout não possuem um array válido chamado 'atletas'."
+
+                );
+
+            }
 
 
             elenco =
-                dadosElenco.atletas || [];
+
+                dadosElenco.atletas;
 
 
             scouts =
-                dadosScout.atletas || [];
 
+                dadosScout.atletas;
+
+
+            console.log(
+
+                "TOTAL DE ATLETAS:",
+
+                elenco.length
+
+            );
+
+
+            console.log(
+
+                "TOTAL DE SCOUTS:",
+
+                scouts.length
+
+            );
+
+
+            if (
+
+                elenco.length === 0
+
+            ) {
+
+                throw new Error(
+
+                    "O arquivo do elenco foi carregado, mas não possui atletas."
+
+                );
+
+            }
 
 
             renderizar();
@@ -1122,40 +1752,32 @@
 
             console.error(
 
-                "Erro ao carregar arquivos locais:",
+                "ERRO CRÍTICO:",
 
                 erro
 
             );
 
 
-
-            document
-                .getElementById(
-                    "grid-cards"
-                )
-                .innerHTML = `
+            grid.innerHTML = `
 
                 <div
                     class="empty-state"
-                    style="color:#ff8a8a;"
+                    style="
+                        color:#ff8a8a;
+                        font-style:normal;
+                    "
                 >
 
-                    Erro ao carregar os dados.
-
-                    Verifique se os arquivos
-
                     <strong>
-                        Elenco.json
+
+                        Erro ao carregar os atletas.
+
                     </strong>
 
-                    e
+                    <br><br>
 
-                    <strong>
-                        Dados.json
-                    </strong>
-
-                    estão na mesma pasta.
+                    ${erro.message}
 
                 </div>
 
@@ -1166,48 +1788,80 @@
     }
 
 
+    /* =========================
+       ENCONTRAR SCOUT
+    ========================= */
 
     function pegarScout(nome) {
 
-        return scouts.find(
+        const nomeNormalizado =
 
-            jogador =>
-
-                jogador.nome
-                    .toLowerCase()
-
-                ===
-
+            normalizarTexto(
                 nome
-                    .toLowerCase()
+            );
 
-        )
 
-        ||
+        const jogadorEncontrado =
 
-        {
+            scouts.find(
 
-            jogos: 0,
+                jogador =>
 
-            participacao_em_gol: 0,
+                    normalizarTexto(
 
-            bloqueio: 0,
+                        jogador.nome
 
-            desarme: 0,
+                    )
 
-            chance_criada: 0,
+                    ===
 
-            drible_certo: 0,
+                    nomeNormalizado
 
-            chute: 0,
+            );
 
-            chute_no_gol: 0
 
-        };
+        return (
+
+            jogadorEncontrado
+
+            ||
+
+            {
+
+                jogos:
+                    0,
+
+                participacao_em_gol:
+                    0,
+
+                bloqueio:
+                    0,
+
+                desarme:
+                    0,
+
+                chance_criada:
+                    0,
+
+                drible_certo:
+                    0,
+
+                chute:
+                    0,
+
+                chute_no_gol:
+                    0
+
+            }
+
+        );
 
     }
 
 
+    /* =========================
+       RENDERIZAR
+    ========================= */
 
     function renderizar() {
 
@@ -1220,31 +1874,40 @@
             );
 
 
+        const campoPesquisa =
+
+            document.getElementById(
+
+                "pesquisa"
+
+            );
+
+
+        const selectPosicao =
+
+            document.getElementById(
+
+                "posicao"
+
+            );
+
 
         const pesquisa =
 
-            document
-                .getElementById(
-                    "pesquisa"
-                )
-                .value
-                .toLowerCase()
-                .trim();
+            normalizarTexto(
 
+                campoPesquisa
+                    ? campoPesquisa.value
+                    : ""
+
+            );
 
 
         const filtroPosicao =
 
-            document
-                .getElementById(
-                    "posicao"
-                )
-                .value;
-
-
-
-        grid.innerHTML = "";
-
+            selectPosicao
+                ? selectPosicao.value
+                : "";
 
 
         const jogadoresFiltrados =
@@ -1253,45 +1916,77 @@
 
                 jogador => {
 
+                    if (
+
+                        !jogador
+
+                        ||
+
+                        !jogador.nome
+
+                    ) {
+
+                        return false;
+
+                    }
+
+
                     const nome =
 
-                        jogador.nome
-                            .toLowerCase();
+                        normalizarTexto(
 
+                            jogador.nome
+
+                        );
+
+
+                    const posicao =
+
+                        String(
+
+                            jogador.posicao || ""
+
+                        )
+
+                        .trim();
 
 
                     const passaPesquisa =
 
                         nome.includes(
-                            pesquisa
-                        );
 
+                            pesquisa
+
+                        );
 
 
                     const passaPosicao =
 
-                        filtroPosicao === ""
+                        !filtroPosicao
 
                         ||
 
-                        jogador.posicao ===
+                        posicao ===
 
                         filtroPosicao;
 
 
-
-                    return
+                    return (
 
                         passaPesquisa
 
                         &&
 
-                        passaPosicao;
+                        passaPosicao
+
+                    );
 
                 }
 
             );
 
+
+        grid.innerHTML = "";
 
 
         if (
@@ -1306,6 +2001,11 @@
 
                     Nenhum atleta encontrado.
 
+                    <br><br>
+
+                    Atletas carregados:
+                    ${elenco.length}
+
                 </div>
 
             `;
@@ -1314,7 +2014,6 @@
             return;
 
         }
-
 
 
         jogadoresFiltrados.forEach(
@@ -1330,7 +2029,6 @@
                     );
 
 
-
                 const partida =
 
                     jogador.ultima_partida
@@ -1340,49 +2038,67 @@
                     {};
 
 
-
                 const defensiva =
 
-                    partida.participacao_defensiva
+                    Number(
+
+                        partida.participacao_defensiva
+
+                    )
 
                     ||
 
                     0;
-
 
 
                 const criativa =
 
-                    partida.participacao_criativa
+                    Number(
+
+                        partida.participacao_criativa
+
+                    )
 
                     ||
 
                     0;
-
 
 
                 const ofensiva =
 
-                    partida.participacao_ofensiva
+                    Number(
+
+                        partida.participacao_ofensiva
+
+                        ??
+
+                        partida.Participacao_ofensiva
+
+                        ??
+
+                        0
+
+                    )
 
                     ||
 
                     0;
-
 
 
                 const geral =
 
-                    partida.geral
+                    Number(
+
+                        partida.geral
+
+                    )
 
                     ||
 
                     0;
 
 
-
                 grid.innerHTML += `
-
 
                     <div class="card-atleta">
 
@@ -1400,11 +2116,17 @@
                                 </h3>
 
 
-                                <span
-                                    class="posicao"
-                                >
+                                <span class="posicao">
 
-                                    ${jogador.posicao}
+                                    ${
+
+                                        jogador.posicao
+
+                                        ||
+
+                                        "Sem posição"
+
+                                    }
 
                                 </span>
 
@@ -1412,9 +2134,7 @@
                             </div>
 
 
-                            <div
-                                class="badge-geral"
-                            >
+                            <div class="badge-geral">
 
                                 ${geral}%
 
@@ -1424,18 +2144,15 @@
                         </div>
 
 
-
-                        <div
-                            class="card-metrics"
-                        >
+                        <div class="card-metrics">
 
 
-                            <div
-                                class="metric-item"
-                            >
+                            <div class="metric-item">
 
                                 <span>
+
                                     P.A.
+
                                 </span>
 
                                 <strong>
@@ -1447,13 +2164,12 @@
                             </div>
 
 
-
-                            <div
-                                class="metric-item"
-                            >
+                            <div class="metric-item">
 
                                 <span>
+
                                     P.C.
+
                                 </span>
 
                                 <strong>
@@ -1465,13 +2181,12 @@
                             </div>
 
 
-
-                            <div
-                                class="metric-item"
-                            >
+                            <div class="metric-item">
 
                                 <span>
+
                                     P.O.
+
                                 </span>
 
                                 <strong>
@@ -1486,17 +2201,14 @@
                         </div>
 
 
-
                         <details>
 
 
                             <summary>
 
                                 Ficha completa
-                                *Dados.json
 
                             </summary>
-
 
 
                             <div
@@ -1504,143 +2216,168 @@
                             >
 
 
-                                <div
-                                    class="stat-box"
-                                >
+                                <div class="stat-box">
 
                                     <span>
+
                                         Jogos
+
                                     </span>
 
                                     <strong>
 
-                                        ${scout.jogos}
+                                        ${scout.jogos ?? 0}
 
                                     </strong>
 
                                 </div>
 
 
-
-                                <div
-                                    class="stat-box"
-                                >
+                                <div class="stat-box">
 
                                     <span>
+
                                         Part. Gol
+
                                     </span>
 
                                     <strong>
 
-                                        ${scout.participacao_em_gol}
+                                        ${
+
+                                            scout.participacao_em_gol
+
+                                            ??
+
+                                            0
+
+                                        }
 
                                     </strong>
 
                                 </div>
 
 
-
-                                <div
-                                    class="stat-box"
-                                >
+                                <div class="stat-box">
 
                                     <span>
+
                                         Bloqueio
+
                                     </span>
 
                                     <strong>
 
-                                        ${scout.bloqueio}
+                                        ${scout.bloqueio ?? 0}
 
                                     </strong>
 
                                 </div>
 
 
-
-                                <div
-                                    class="stat-box"
-                                >
+                                <div class="stat-box">
 
                                     <span>
+
                                         Desarme
+
                                     </span>
 
                                     <strong>
 
-                                        ${scout.desarme}
+                                        ${scout.desarme ?? 0}
 
                                     </strong>
 
                                 </div>
 
 
-
-                                <div
-                                    class="stat-box"
-                                >
+                                <div class="stat-box">
 
                                     <span>
+
                                         Chance Criada
+
                                     </span>
 
                                     <strong>
 
-                                        ${scout.chance_criada}
+                                        ${
+
+                                            scout.chance_criada
+
+                                            ??
+
+                                            0
+
+                                        }
 
                                     </strong>
 
                                 </div>
 
 
-
-                                <div
-                                    class="stat-box"
-                                >
+                                <div class="stat-box">
 
                                     <span>
+
                                         Drible Certo
+
                                     </span>
 
                                     <strong>
 
-                                        ${scout.drible_certo}
+                                        ${
+
+                                            scout.drible_certo
+
+                                            ??
+
+                                            0
+
+                                        }
 
                                     </strong>
 
                                 </div>
 
 
-
-                                <div
-                                    class="stat-box"
-                                >
+                                <div class="stat-box">
 
                                     <span>
+
                                         Chute
+
                                     </span>
 
                                     <strong>
 
-                                        ${scout.chute}
+                                        ${scout.chute ?? 0}
 
                                     </strong>
 
                                 </div>
 
 
-
-                                <div
-                                    class="stat-box"
-                                >
+                                <div class="stat-box">
 
                                     <span>
+
                                         Chute no Gol
+
                                     </span>
 
                                     <strong>
 
-                                        ${scout.chute_no_gol}
+                                        ${
+
+                                            scout.chute_no_gol
+
+                                            ??
+
+                                            0
+
+                                        }
 
                                     </strong>
 
@@ -1664,11 +2401,18 @@
     }
 
 
+    /* =========================
+       EVENTOS
+    ========================= */
 
     document
+
         .getElementById(
+
             "pesquisa"
+
         )
+
         .addEventListener(
 
             "input",
@@ -1678,11 +2422,14 @@
         );
 
 
-
     document
+
         .getElementById(
+
             "posicao"
+
         )
+
         .addEventListener(
 
             "change",
@@ -1692,11 +2439,13 @@
         );
 
 
+    /* =========================
+       INICIAR
+    ========================= */
 
     carregarDados();
 
 </script>
-
 
 
 <!-- FECHAR ANÚNCIO -->
@@ -1704,9 +2453,13 @@
 <script>
 
     document
+
         .getElementById(
+
             "fechar-anuncio"
+
         )
+
         .addEventListener(
 
             "click",
@@ -1732,16 +2485,17 @@
                     );
 
 
+                anuncio.style.opacity =
+                    "0";
 
-                anuncio.style.opacity = "0";
 
                 anuncio.style.transform =
 
                     "translate(-50%, -45%) scale(0.95)";
 
 
-                overlay.style.opacity = "0";
-
+                overlay.style.opacity =
+                    "0";
 
 
                 setTimeout(
