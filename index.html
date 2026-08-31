@@ -126,14 +126,12 @@
             flex: 1;
         }
 
-        /* GRID DE CARDS */
         .grid-cards {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
             gap: 20px;
         }
 
-        /* CARD INDIVIDUAL */
         .card-atleta {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -184,7 +182,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* PARTICIPAÇÕES (P.A., P.C., P.O.) */
         .card-metrics {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -212,7 +209,6 @@
             color: #fff;
         }
 
-        /* DETAILS (MENU SUSPENSO / ACCORDION) */
         details {
             border-top: 1px solid var(--border);
             padding-top: 14px;
@@ -250,7 +246,6 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
-            animation: fadeIn 0.3s ease;
         }
 
         .stat-box {
@@ -273,11 +268,6 @@
             color: #fff;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-4px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .empty-state {
             grid-column: 1 / -1;
             text-align: center;
@@ -289,7 +279,6 @@
             border-radius: 16px;
         }
 
-        /* CAIXA FLUTUANTE (ADS / WIDGET) */
         .floating-box {
             position: fixed;
             bottom: 20px;
@@ -305,7 +294,6 @@
             flex-direction: column;
             align-items: flex-end;
             max-width: 330px;
-            animation: slideUp 0.3s ease;
         }
 
         .floating-close {
@@ -336,11 +324,6 @@
             justify-content: center;
             overflow: hidden;
             border-radius: 8px;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         footer {
@@ -392,7 +375,6 @@
         </div>
     </main>
 
-    <!-- CAIXA FLUTUANTE COM BOTÃO X -->
     <div id="floatingAdBox" class="floating-box">
         <button class="floating-close" onclick="fecharCaixaFlutuante()" title="Fechar">✕</button>
         <div class="floating-content">
@@ -478,7 +460,6 @@
                 const nome = jogador.nome.toLowerCase();
                 const passaPesquisa = nome.includes(pesquisa);
                 const passaPosicao = filtroPosicao === "" || jogador.posicao === filtroPosicao;
-
                 return passaPesquisa && passaPosicao;
             });
 
@@ -486,6 +467,8 @@
                 grid.innerHTML = `<div class="empty-state">Nenhum atleta encontrado.</div>`;
                 return;
             }
+
+            let htmlCards = "";
 
             jogadoresFiltrados.forEach(jogador => {
                 const scout = pegarScout(jogador.nome);
@@ -496,7 +479,7 @@
                 const ofensiva = partida.participacao_ofensiva || 0;
                 const geral = partida.geral || 0;
 
-                grid.innerHTML += `
+                htmlCards += `
                     <div class="card-atleta">
                         <div class="card-header">
                             <div class="card-info">
@@ -561,6 +544,8 @@
                     </div>
                 `;
             });
+
+            grid.innerHTML = htmlCards;
         }
 
         document.getElementById("pesquisa").addEventListener("input", renderizar);
