@@ -289,6 +289,60 @@
             border-radius: 16px;
         }
 
+        /* CAIXA FLUTUANTE (ADS / WIDGET) */
+        .floating-box {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(26, 6, 6, 0.95);
+            border: 1px solid var(--border-focus);
+            border-radius: 16px;
+            padding: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            max-width: 330px;
+            animation: slideUp 0.3s ease;
+        }
+
+        .floating-close {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border);
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .floating-close:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .floating-content {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         footer {
             max-width: 1200px;
             width: 100%;
@@ -308,6 +362,7 @@
             .filtros { padding: 0 16px; gap: 12px; }
             .container { padding: 0 16px 40px; }
             .grid-cards { grid-template-columns: 1fr; }
+            .floating-box { bottom: 10px; right: 10px; left: 10px; max-width: none; }
         }
     </style>
 </head>
@@ -337,11 +392,35 @@
         </div>
     </main>
 
+    <!-- CAIXA FLUTUANTE COM BOTÃO X -->
+    <div id="floatingAdBox" class="floating-box">
+        <button class="floating-close" onclick="fecharCaixaFlutuante()" title="Fechar">✕</button>
+        <div class="floating-content">
+            <script>
+              atOptions = {
+                'key' : 'f91292284fc8fd9b107d47a6e274fe79',
+                'format' : 'iframe',
+                'height' : 250,
+                'width' : 300,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highrevenueformat.com/f91292284fc8fd9b107d47a6e274fe79/invoke.js"></script>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2026 Create Per Náutico • Football Data Intelligence</p>
     </footer>
 
     <script>
+        function fecharCaixaFlutuante() {
+            const caixa = document.getElementById('floatingAdBox');
+            if (caixa) {
+                caixa.style.display = 'none';
+            }
+        }
+
         let elenco = [];
         let scouts = [];
 
