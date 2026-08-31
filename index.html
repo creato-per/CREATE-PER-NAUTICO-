@@ -14,7 +14,7 @@
             --primary-light: #b31414;
             --bg-main: #120303;
             --bg-card: rgba(255, 255, 255, 0.03);
-            --bg-card-hover: rgba(255, 255, 255, 0.07);
+            --bg-card-hover: rgba(255, 255, 255, 0.06);
             --border: rgba(255, 255, 255, 0.1);
             --border-focus: rgba(255, 255, 255, 0.3);
             --text-main: #f9f9f9;
@@ -41,7 +41,7 @@
 
         header {
             padding: 40px 20px 20px;
-            max-width: 1320px;
+            max-width: 1200px;
             width: 100%;
             margin: 0 auto;
         }
@@ -65,7 +65,7 @@
         }
 
         .filtros {
-            max-width: 1320px;
+            max-width: 1200px;
             width: 100%;
             margin: 10px auto 30px;
             padding: 0 20px;
@@ -119,63 +119,49 @@
         }
 
         .container {
-            max-width: 1320px;
+            max-width: 1200px;
             width: 100%;
             margin: 0 auto;
             padding: 0 20px 60px;
             flex: 1;
         }
 
-        .tabela-container {
-            width: 100%;
-            overflow-x: auto;
+        /* GRID DE CARDS */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 20px;
+        }
+
+        /* CARD INDIVIDUAL */
+        .card-atleta {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 16px;
+            padding: 24px;
             backdrop-filter: blur(12px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease;
         }
 
-        table {
-            width: 100%;
-            min-width: 1250px;
-            border-collapse: collapse;
-            text-align: left;
-        }
-
-        thead {
-            background: rgba(0, 0, 0, 0.2);
-            border-bottom: 1px solid var(--border);
-        }
-
-        th {
-            padding: 18px 16px;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            color: var(--text-muted);
-            white-space: nowrap;
-        }
-
-        td {
-            padding: 16px;
-            border-bottom: 1px solid var(--border);
-            font-size: 14px;
-            color: var(--text-main);
-            white-space: nowrap;
-        }
-
-        tbody tr {
-            transition: background 0.15s ease;
-        }
-
-        tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        tbody tr:hover {
+        .card-atleta:hover {
+            border-color: var(--border-focus);
             background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .card-info h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 6px;
         }
 
         .posicao {
@@ -183,29 +169,128 @@
             font-weight: 600;
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid var(--border);
-            padding: 6px 12px;
-            border-radius: 30px;
+            padding: 5px 10px;
+            border-radius: 20px;
             letter-spacing: 0.5px;
             display: inline-block;
+            color: var(--text-muted);
         }
 
-        .destaque {
-            font-weight: 700;
-            color: #fff;
-            background: linear-gradient(135deg, #fff 0%, #ffc5c5 100%);
+        .badge-geral {
+            font-size: 18px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff 0%, #ff8a8a 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .empty-state {
+        /* PARTICIPAÇÕES (P.A., P.C., P.O.) */
+        .card-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 16px;
             text-align: center;
-            padding: 40px !important;
+        }
+
+        .metric-item span {
+            display: block;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .metric-item strong {
+            font-size: 15px;
+            color: #fff;
+        }
+
+        /* DETAILS (MENU SUSPENSO / ACCORDION) */
+        details {
+            border-top: 1px solid var(--border);
+            padding-top: 14px;
+        }
+
+        summary {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+            transition: color 0.2s;
+        }
+
+        summary:hover {
+            color: #ff6b6b;
+        }
+
+        summary::after {
+            content: '▼';
+            font-size: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .details-content {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .stat-box span {
+            display: block;
+            font-size: 10px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .stat-box strong {
+            font-size: 14px;
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-4px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 50px;
             color: var(--text-muted);
             font-style: italic;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
         }
 
         footer {
-            max-width: 1320px;
+            max-width: 1200px;
             width: 100%;
             margin: 0 auto;
             padding: 30px 20px;
@@ -222,6 +307,7 @@
             .logo h1 { font-size: 26px; }
             .filtros { padding: 0 16px; gap: 12px; }
             .container { padding: 0 16px 40px; }
+            .grid-cards { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -246,32 +332,8 @@
     </section>
 
     <main class="container">
-        <div class="tabela-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Atleta</th>
-                        <th>Posição</th>
-                        <th>Jogos</th>
-                        <th>Participação em Gol</th>
-                        <th>Bloqueio</th>
-                        <th>Desarme</th>
-                        <th>Chance Criada</th>
-                        <th>Drible Certo</th>
-                        <th>Chute</th>
-                        <th>Chute no Gol</th>
-                        <th>Defensiva</th>
-                        <th>Criativa</th>
-                        <th>Ofensiva</th>
-                        <th>Geral</th>
-                    </tr>
-                </thead>
-                <tbody id="tabela">
-                    <tr>
-                        <td colspan="14" class="empty-state">Carregando dados dos atletas...</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div id="grid-cards" class="grid-cards">
+            <div class="empty-state">Carregando dados dos atletas...</div>
         </div>
     </main>
 
@@ -303,12 +365,10 @@
                 renderizar();
             } catch (erro) {
                 console.error("Erro ao carregar arquivos locais:", erro);
-                document.getElementById("tabela").innerHTML = `
-                    <tr>
-                        <td colspan="14" class="empty-state" style="color: #ff8a8a;">
-                            Erro ao carregar os dados. Verifique se os arquivos <strong>Elenco.json</strong> e <strong>Dados.json</strong> estão na mesma pasta e se você está rodando o projeto por um servidor local (Live Server).
-                        </td>
-                    </tr>
+                document.getElementById("grid-cards").innerHTML = `
+                    <div class="empty-state" style="color: #ff8a8a;">
+                        Erro ao carregar os dados. Verifique se os arquivos <strong>Elenco.json</strong> e <strong>Dados.json</strong> estão na mesma pasta e se você está rodando o projeto por um servidor local (Live Server).
+                    </div>
                 `;
             }
         }
@@ -329,11 +389,11 @@
         }
 
         function renderizar() {
-            const tabela = document.getElementById("tabela");
+            const grid = document.getElementById("grid-cards");
             const pesquisa = document.getElementById("pesquisa").value.toLowerCase().trim();
             const filtroPosicao = document.getElementById("posicao").value;
 
-            tabela.innerHTML = "";
+            grid.innerHTML = "";
 
             const jogadoresFiltrados = elenco.filter(jogador => {
                 const nome = jogador.nome.toLowerCase();
@@ -344,11 +404,7 @@
             });
 
             if (jogadoresFiltrados.length === 0) {
-                tabela.innerHTML = `
-                    <tr>
-                        <td colspan="14" class="empty-server empty-state">Nenhum atleta encontrado.</td>
-                    </tr>
-                `;
+                grid.innerHTML = `<div class="empty-state">Nenhum atleta encontrado.</div>`;
                 return;
             }
 
@@ -361,23 +417,69 @@
                 const ofensiva = partida.participacao_ofensiva || 0;
                 const geral = partida.geral || 0;
 
-                tabela.innerHTML += `
-                    <tr>
-                        <td><strong>${jogador.nome}</strong></td>
-                        <td><span class="posicao">${jogador.posicao}</span></td>
-                        <td>${scout.jogos}</td>
-                        <td class="destaque">${scout.participacao_em_gol}</td>
-                        <td>${scout.bloqueio}</td>
-                        <td>${scout.desarme}</td>
-                        <td>${scout.chance_criada}</td>
-                        <td>${scout.drible_certo}</td>
-                        <td>${scout.chute}</td>
-                        <td>${scout.chute_no_gol}</td>
-                        <td>${defensiva}</td>
-                        <td>${criativa}</td>
-                        <td>${ofensiva}</td>
-                        <td class="destaque">${geral}</td>
-                    </tr>
+                grid.innerHTML += `
+                    <div class="card-atleta">
+                        <div class="card-header">
+                            <div class="card-info">
+                                <h3>${jogador.nome}</h3>
+                                <span class="posicao">${jogador.posicao}</span>
+                            </div>
+                            <div class="badge-geral">${geral}%</div>
+                        </div>
+
+                        <div class="card-metrics">
+                            <div class="metric-item">
+                                <span>P.A.</span>
+                                <strong>${ofensiva}</strong>
+                            </div>
+                            <div class="metric-item">
+                                <span>P.C.</span>
+                                <strong>${criativa}</strong>
+                            </div>
+                            <div class="metric-item">
+                                <span>P.O.</span>
+                                <strong>${defensiva}</strong>
+                            </div>
+                        </div>
+
+                        <details>
+                            <summary>Ficha completa *Dados.json</summary>
+                            <div class="details-content">
+                                <div class="stat-box">
+                                    <span>Jogos</span>
+                                    <strong>${scout.jogos}</strong>
+                                </div>
+                                <div class="stat-box">
+                                    <span>Part. Gol</span>
+                                    <strong>${scout.participacao_em_gol}</strong>
+                                </div>
+                                <div class="stat-box">
+                                    <span>Bloqueio</span>
+                                    <strong>${scout.bloqueio}</strong>
+                                </div>
+                                <div class="stat-box">
+                                    <span>Desarme</span>
+                                    <strong>${scout.desarme}</strong>
+                                </div>
+                                <div class="stat-box">
+                                    <span>Chance Criada</span>
+                                    <strong>${scout.chance_criada}</strong>
+                                </div>
+                                <div class="stat-box">
+                                    <span>Drible Certo</span>
+                                    <strong>${scout.drible_certo}</strong>
+                                </div>
+                                <div class="stat-box">
+                                    <span>Chute</span>
+                                    <strong>${scout.chute}</strong>
+                                </div>
+                                <div class="stat-box">
+                                    <span>Chute no Gol</span>
+                                    <strong>${scout.chute_no_gol}</strong>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
                 `;
             });
         }
