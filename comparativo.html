@@ -267,7 +267,7 @@
         <!-- BLOCO 1: GRÁFICO COMPARATIVO DE DESEMPENHO -->
         <section class="secao-card">
             <div class="secao-titulo">
-                <span>Evolução Geral (%) — Últimas 5 Partidas</span>
+                <span>Evolução Geral (%) — Últimos 5 Jogos</span>
             </div>
 
             <div class="slots-comparacao">
@@ -290,17 +290,21 @@
             </div>
         </section>
 
-        <!-- AQUI ENTRA O CÓDIGO EXTRA ENTRE O GRÁFICO E O RANKING -->
-        <section class="secao-card">
-            <div class="secao-titulo">
-                <span>Espaço Intermediário / Bloco Adicional</span>
-            </div>
-            <p style="color: var(--text-muted); font-size: 14px;">
-                Coloque aqui o conteúdo ou widget adicional que desejar exibir entre o gráfico comparativo e a tabela de ranking.
-            </p>
+        <!-- BLOCO ANÚNCIO / INTERMEDIÁRIO -->
+        <section class="secao-card" style="display: flex; justify-content: center; align-items: center; padding: 16px;">
+            <script>
+              atOptions = {
+                'key' : '3e342aeb083d859d055a6da96f4c7a2a',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highrevenueformat.com/3e342aeb083d859d055a6da96f4c7a2a/invoke.js"></script>
         </section>
 
-        <!-- BLOCO 2: RANKING ESTATÍSTICO PER GAME -->
+        <!-- BLOCO 2: RANKING ESTATÍSTICO PER GAME (TOP 10) -->
         <section class="secao-card">
             <div class="ranking-header">
                 <div class="secao-titulo" style="margin-bottom: 0;">Top 10 — Ranking por Média (Per Game)</div>
@@ -398,18 +402,10 @@
         }
 
         function obterHistoricoPartidas(atletaObj) {
-            // Se o JSON tiver um array de histórico de partidas, pega os últimos 5
-            if (atletaObj.ultimas_partidas && Array.isArray(atletaObj.ultimas_partidas)) {
-                return atletaObj.ultimas_partidas.slice(-5).map(p => p.geral || 0);
+            if (atletaObj.ultimos_5_jogos && Array.isArray(atletaObj.ultimos_5_jogos)) {
+                return atletaObj.ultimos_5_jogos;
             }
-            if (atletaObj.historico_partidas && Array.isArray(atletaObj.historico_partidas)) {
-                return atletaObj.historico_partidas.slice(-5).map(p => p.geral || 0);
-            }
-            // Fallback se houver apenas a última partida registrada no modelo antigo
-            if (atletaObj.ultima_partida) {
-                return [atletaObj.ultima_partida.geral || 0];
-            }
-            return [0];
+            return [0, 0, 0, 0, 0];
         }
 
         function inicializarGraficoVazio() {
@@ -449,12 +445,10 @@
             const nome2 = document.getElementById("jogador2").value;
 
             let datasets = [];
-            let maxTamanhoHistorico = 5;
 
             if (nome1) {
                 const atletaObj = elencoGlobal.find(a => a.nome === nome1);
-                const historico = atletaObj ? obterHistoricoPartidas(atletaObj) : [0];
-                if (historico.length > maxTamanhoHistorico) maxTamanhoHistorico = historico.length;
+                const historico = atletaObj ? obterHistoricoPartidas(atletaObj) : [0, 0, 0, 0, 0];
 
                 datasets.push({
                     label: nome1,
@@ -469,8 +463,7 @@
 
             if (nome2) {
                 const atletaObj = elencoGlobal.find(a => a.nome === nome2);
-                const historico = atletaObj ? obterHistoricoPartidas(atletaObj) : [0];
-                if (historico.length > maxTamanhoHistorico) maxTamanhoHistorico = historico.length;
+                const historico = atletaObj ? obterHistoricoPartidas(atletaObj) : [0, 0, 0, 0, 0];
 
                 datasets.push({
                     label: nome2,
@@ -483,18 +476,8 @@
                 });
             }
 
-            // Gera os labels dinamicamente para acomodar até 5 partidas
-            let labelsDinamicos = [];
-            for (let i = maxTamanhoHistorico; i >= 1; i--) {
-                if (i === 1) {
-                    labelsDinamicos.push('Última Partida');
-                } else {
-                    labelsDinamicos.push(`Partida -${i-1}`);
-                }
-            }
-
             if (meuGrafico) {
-                meuGrafico.data.labels = labelsDinamicos;
+                meuGrafico.data.labels = ['Partida 1', 'Partida 2', 'Partida 3', 'Partida 4', 'Última Partida'];
                 meuGrafico.data.datasets = datasets;
                 meuGrafico.update();
             }
@@ -542,7 +525,6 @@
 
             listaCalculada.sort((a, b) => b.media - a.media);
 
-            // Filtra apenas os 10 primeiros colocados
             const top10 = listaCalculada.slice(0, 10);
 
             if (top10.length === 0) {
