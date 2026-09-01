@@ -267,9 +267,9 @@
         <!-- BLOCO 1: GRÁFICO COMPARATIVO DE DESEMPENHO -->
         <section class="secao-card">
             <div class="secao-titulo">
-                <span>Evolução Geral (%) — Das Partidas Antigas para Recentes</span>
+                <span>Evolução Geral (%) — Últimas 5 Partidas</span>
             </div>
-            
+
             <div class="slots-comparacao">
                 <div class="slot-group">
                     <label for="jogador1">Jogador 1</label>
@@ -290,10 +290,20 @@
             </div>
         </section>
 
+        <!-- AQUI ENTRA O CÓDIGO EXTRA ENTRE O GRÁFICO E O RANKING -->
+        <section class="secao-card">
+            <div class="secao-titulo">
+                <span>Espaço Intermediário / Bloco Adicional</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 14px;">
+                Coloque aqui o conteúdo ou widget adicional que desejar exibir entre o gráfico comparativo e a tabela de ranking.
+            </p>
+        </section>
+
         <!-- BLOCO 2: RANKING ESTATÍSTICO PER GAME -->
         <section class="secao-card">
             <div class="ranking-header">
-                <div class="secao-titulo" style="margin-bottom: 0;">Ranking por Média (Per Game)</div>
+                <div class="secao-titulo" style="margin-bottom: 0;">Top 10 — Ranking por Média (Per Game)</div>
                 <div class="ranking-select-wrapper">
                     <label for="metricaRanking">Métrica:</label>
                     <select id="metricaRanking" onchange="renderizarRanking()">
@@ -388,9 +398,12 @@
         }
 
         function obterHistoricoPartidas(atletaObj) {
-            // Se o JSON tiver um array de histórico de partidas (antigas -> recentes)
+            // Se o JSON tiver um array de histórico de partidas, pega os últimos 5
+            if (atletaObj.ultimas_partidas && Array.isArray(atletaObj.ultimas_partidas)) {
+                return atletaObj.ultimas_partidas.slice(-5).map(p => p.geral || 0);
+            }
             if (atletaObj.historico_partidas && Array.isArray(atletaObj.historico_partidas)) {
-                return atletaObj.historico_partidas.map(p => p.geral || 0);
+                return atletaObj.historico_partidas.slice(-5).map(p => p.geral || 0);
             }
             // Fallback se houver apenas a última partida registrada no modelo antigo
             if (atletaObj.ultima_partida) {
@@ -404,7 +417,7 @@
             meuGrafico = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ['Partida Anterior', 'Última Partida'],
+                    labels: ['Partida 1', 'Partida 2', 'Partida 3', 'Partida 4', 'Última Partida'],
                     datasets: []
                 },
                 options: {
@@ -436,13 +449,13 @@
             const nome2 = document.getElementById("jogador2").value;
 
             let datasets = [];
-            let maxTamanhoHistorico = 2;
+            let maxTamanhoHistorico = 5;
 
             if (nome1) {
                 const atletaObj = elencoGlobal.find(a => a.nome === nome1);
                 const historico = atletaObj ? obterHistoricoPartidas(atletaObj) : [0];
                 if (historico.length > maxTamanhoHistorico) maxTamanhoHistorico = historico.length;
-                
+
                 datasets.push({
                     label: nome1,
                     data: historico,
@@ -470,7 +483,7 @@
                 });
             }
 
-            // Gera os labels do eixo X dinamicamente baseados na quantidade de partidas (da direita para esquerda)
+            // Gera os labels dinamicamente para acomodar até 5 partidas
             let labelsDinamicos = [];
             for (let i = maxTamanhoHistorico; i >= 1; i--) {
                 if (i === 1) {
@@ -529,13 +542,16 @@
 
             listaCalculada.sort((a, b) => b.media - a.media);
 
-            if (listaCalculada.length === 0) {
+            // Filtra apenas os 10 primeiros colocados
+            const top10 = listaCalculada.slice(0, 10);
+
+            if (top10.length === 0) {
                 corpo.innerHTML = `<tr><td colspan="6" class="empty-state">Nenhum dado encontrado para ranking.</td></tr>`;
                 return;
             }
 
             let htmlTabela = "";
-            listaCalculada.forEach((item, index) => {
+            top10.forEach((item, index) => {
                 htmlTabela += `
                     <tr>
                         <td class="posicao-num">${index + 1}º</td>
