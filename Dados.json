@@ -4,11 +4,11 @@
     {
       "nome": "Nikollas",
       "posicao": "Goleiro",
-      "jogos": 1,
-      "defesas_dificeis": 0,
-      "bolas_recuperadas": 8,
-      "gols_evitados": 0,
-      "chutes_sofridos":1
+      "jogos": 2,
+      "defesas_dificeis": 8,
+      "bolas_recuperadas": 13,
+      "gols_evitados": 2,
+      "chutes_sofridos":14
     },
     {
       "nome": "Mão",
@@ -32,8 +32,8 @@
     {
       "nome": "Gledson",
       "posicao": "Defensor",
-      "jogos": 1,
-      "bloqueio": 3,
+      "jogos": 2,
+      "bloqueio": 5,
       "desarme": 1,
       "gols_evitados": 1,
       "gols": 0,
@@ -42,9 +42,9 @@
     {
       "nome": "Dhonatan",
       "posicao": "Defensor",
-      "jogos": 0,
-      "bloqueio": 0,
-      "desarme": 0,
+      "jogos": 1,
+      "bloqueio": 4,
+      "desarme": 1,
       "gols_evitados": 0,
       "gols": 0,
       "bolas_para_gol": 0
@@ -52,9 +52,9 @@
     {
       "nome": "Vini",
       "posicao": "Defensor",
-      "jogos": 1,
-      "bloqueio": 0,
-      "desarme": 2,
+      "jogos": 2,
+      "bloqueio": 3,
+      "desarme": 3,
       "gols_evitados": 0,
       "gols": 0,
       "bolas_para_gol": 1
@@ -102,9 +102,9 @@
     {
       "nome": "Hector",
       "posicao": "Defensor",
-      "jogos": 1,
-      "bloqueio": 1,
-      "desarme": 3,
+      "jogos": 2,
+      "bloqueio": 7,
+      "desarme": 5,
       "gols_evitados": 0,
       "gols": 0,
       "bolas_para_gol": 1
@@ -112,8 +112,8 @@
     {
       "nome": "Matheus Uchôa",
       "posicao": "Meio-Campista",
-      "jogos": 0,
-      "chance_criada": 0,
+      "jogos": 1,
+      "chance_criada": 1,
       "drible_certo": 0,
       "gols": 0,
       "bolas_para_gol": 0,
@@ -132,7 +132,7 @@
     {
       "nome": "Pedro Ricardo",
       "posicao": "Meio-Campista",
-      "jogos": 1,
+      "jogos": 2,
       "chance_criada": 1,
       "drible_certo": 0,
       "gols": 0,
@@ -142,7 +142,7 @@
     {
       "nome": "Thiago da Paz",
       "posicao": "Meio-Campista",
-      "jogos": 0,
+      "jogos": 1,
       "chance_criada": 0,
       "drible_certo": 0,
       "gols": 0,
@@ -172,11 +172,11 @@
     {
       "nome": "Wendell",
       "posicao": "Meio-Campista",
-      "jogos": 1,
-      "chance_criada": 1,
+      "jogos": 2,
+      "chance_criada": 2,
       "drible_certo": 0,
       "gols": 0,
-      "bolas_para_gol": 0,
+      "bolas_para_gol": 1,
       "gols_perdidos": 1
     },
     {
@@ -190,20 +190,20 @@
       "gols_perdidos": 0
     },
     {
-      "nome": "isac",
+      "nome": "isaque",
       "posicao": "Meio-Campista",
-      "jogos": 1,
+      "jogos": 2,
       "chance_criada": 0,
       "drible_certo": 0,
       "gols": 1,
       "bolas_para_gol": 1,
-      "gols_perdidos": 2
+      "gols_perdidos": 5
     },
     {
       "nome": "Rosa",
       "posicao": "Atacante",
-      "jogos": 1,
-      "chance_criada": 2,
+      "jogos": 2,
+      "chance_criada": 3,
       "drible_certo": 0,
       "gols": 0,
       "bolas_para_gol": 1,
@@ -212,18 +212,18 @@
     {
       "nome": "Lukayann",
       "posicao": "Atacante",
-      "jogos": 1,
+      "jogos": 2,
       "chance_criada": 3,
-      "drible_certo": 1,
+      "drible_certo": 2,
       "gols": 0,
       "bolas_para_gol": 2,
-      "gols_perdidos": 2
+      "gols_perdidos": 3
     },
     {
       "nome": "Daniel",
       "posicao": "Atacante",
-      "jogos": 1,
-      "chance_criada": 2,
+      "jogos": 2,
+      "chance_criada": 3,
       "drible_certo": 1,
       "gols": 1,
       "bolas_para_gol": 1,
@@ -232,7 +232,7 @@
     {
       "nome": "Halanzinho",
       "posicao": "Atacante",
-      "jogos": 1,
+      "jogos": 2,
       "chance_criada": 2,
       "drible_certo": 1,
       "gols": 0,
@@ -248,6 +248,16 @@
       "gols": 0,
       "bolas_para_gol": 0,
       "gols_perdidos": 0
+    },
+{
+      "nome": "Miguel",
+      "posicao": "Defensor",
+      "jogos": 1,
+      "bloqueio": 1,
+      "desarme": 0,
+      "gols_evitados": 1,
+      "gols": 0,
+      "bolas_para_gol": 0
     },
     {
       "nome": "Wellington Bigode",
