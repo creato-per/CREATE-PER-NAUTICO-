@@ -10,7 +10,7 @@
         "seguranca": 0,
         "geral": 25
       },
-      "ultimos_5_jogos": [20, 25, 0, 0, 0]
+      "ultimos_5_jogos": [20, 0, 25, 0, 0]
     },
     {
       "nome": "Mão",
@@ -43,7 +43,7 @@
         "participacao_ofensiva": 0,
         "geral": 2.8
       },
-      "ultimos_5_jogos": [15, 3, 0, 0, 0]
+      "ultimos_5_jogos": [15, 0, 3, 0, 0]
     },
     {
       "nome": "Dhonatan",
@@ -54,7 +54,7 @@
         "participacao_ofensiva": 0,
         "geral": 7
       },
-      "ultimos_5_jogos": [0, 7, 0, 0, 0]
+      "ultimos_5_jogos": [0, 0, 7, 0, 0]
     },
     {
       "nome": "Vini",
@@ -65,7 +65,7 @@
         "participacao_ofensiva": 0,
         "geral": 4.2
       },
-      "ultimos_5_jogos": [18, 4, 0, 0, 0]
+      "ultimos_5_jogos": [18, 0, 4, 0, 0]
     },
     {
       "nome": "Guilherme Faria",
@@ -120,7 +120,7 @@
         "participacao_ofensiva": 0,
         "geral": 2.8
       },
-      "ultimos_5_jogos": [11, 3, 0, 0, 0]
+      "ultimos_5_jogos": [11, 0, 3, 0, 0]
     },
     {
       "nome": "Marcelinho",
@@ -142,7 +142,7 @@
         "participacao_ofensiva": 8.3,
         "geral": 1.4
       },
-      "ultimos_5_jogos": [35, 1, 0, 0, 0]
+      "ultimos_5_jogos": [35, 0, 1, 0, 0]
     },
     {
       "nome": "Thiago da Paz",
@@ -186,7 +186,7 @@
         "participacao_ofensiva": 16.6,
         "geral": 8.4
       },
-      "ultimos_5_jogos": [18, 8, 0, 0, 0]
+      "ultimos_5_jogos": [18, 0, 8, 0, 0]
     },
     {
       "nome": "Rosa",
@@ -197,7 +197,7 @@
         "participacao_ofensiva": 0,
         "geral": 1.4
       },
-      "ultimos_5_jogos": [20, 1, 0, 0, 0]
+      "ultimos_5_jogos": [20, 0, 1, 0, 0]
     },
     {
       "nome": "Lukayann",
@@ -208,7 +208,7 @@
         "participacao_ofensiva": 16.6,
         "geral": 7
       },
-      "ultimos_5_jogos": [30, 7, 0, 0, 0]
+      "ultimos_5_jogos": [30, 0, 7, 0, 0]
     },
     {
       "nome": "Daniel",
@@ -219,7 +219,7 @@
         "participacao_ofensiva": 0,
         "geral": 1.4
       },
-      "ultimos_5_jogos": [35, 1, 0, 0, 0]
+      "ultimos_5_jogos": [35, 0, 1, 0, 0]
     },
     {
       "nome": "Halanzinho",
@@ -230,7 +230,7 @@
         "participacao_ofensiva": 16.6,
         "geral": 2
       },
-      "ultimos_5_jogos": [29, 2, 0, 0, 0]
+      "ultimos_5_jogos": [29, 0, 2, 0, 0]
     },
     {
       "nome": "Adrian",
@@ -251,7 +251,7 @@
         "Participacao_ofensiva": 0,
         "geral": 11.2
       },
-      "ultimos_5_jogos": [23, 11, 0, 0, 0]
+      "ultimos_5_jogos": [23, 0, 11, 0, 0]
     },{
       "nome": "Rikelme",
       "posicao": "Meio-Campista",
@@ -271,7 +271,7 @@
         "participacao_ofensiva": 41,
         "geral": 7
       },
-      "ultimos_5_jogos": [15, 7, 0, 0, 0]
+      "ultimos_5_jogos": [15, 0, 7, 0, 0]
     },
     {
       "nome": "Wellington Bigode",
@@ -293,7 +293,7 @@
         "participacao_ofensiva": 0,
         "geral": 5.6
       },
-      "ultimos_5_jogos": [0, 6, 0, 0, 0]
+      "ultimos_5_jogos": [0, 0, 6, 0, 0]
     }
   ]
 }
