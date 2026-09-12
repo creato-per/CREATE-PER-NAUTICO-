@@ -5,10 +5,10 @@
       "nome": "Nikollas",
       "posicao": "Goleiro",
       "jogos": 1,
-      "defesas_dificeis": 3,
-      "bolas_recuperadas": 5,
-      "gols_evitados": 1,
-      "chutes_sofridos":
+      "defesas_dificeis": 0,
+      "bolas_recuperadas": 8,
+      "gols_evitados": 0,
+      "chutes_sofridos":1
     },
     {
       "nome": "Mão",
@@ -35,7 +35,7 @@
       "jogos": 1,
       "bloqueio": 3,
       "desarme": 1,
-      "gols_evitados": 2,
+      "gols_evitados": 1,
       "gols": 0,
       "bolas_para_gol": 1
     },
@@ -55,9 +55,9 @@
       "jogos": 1,
       "bloqueio": 0,
       "desarme": 2,
-      "gols_evitados": 1,
+      "gols_evitados": 0,
       "gols": 0,
-      "bolas_para_gol": 2
+      "bolas_para_gol": 1
     },
     {
       "nome": "Guilherme Faria",
@@ -76,7 +76,7 @@
       "bloqueio": 2,
       "desarme": 2,
       "gols_evitados": 1,
-      "gols": 0,
+      "gols": 1,
       "bolas_para_gol": 0
     },
     {
@@ -105,9 +105,9 @@
       "jogos": 1,
       "bloqueio": 1,
       "desarme": 3,
-      "gols_evitados": 2,
+      "gols_evitados": 0,
       "gols": 0,
-      "bolas_para_gol": 3
+      "bolas_para_gol": 1
     },
     {
       "nome": "Matheus Uchôa",
@@ -136,8 +136,8 @@
       "chance_criada": 1,
       "drible_certo": 0,
       "gols": 0,
-      "bolas_para_gol": 1,
-      "gols_perdidos": 0
+      "bolas_para_gol": 0,
+      "gols_perdidos": 1
     },
     {
       "nome": "Thiago da Paz",
@@ -176,7 +176,7 @@
       "chance_criada": 1,
       "drible_certo": 0,
       "gols": 0,
-      "bolas_para_gol": 1,
+      "bolas_para_gol": 0,
       "gols_perdidos": 1
     },
     {
@@ -186,7 +186,7 @@
       "chance_criada": 1,
       "drible_certo": 0,
       "gols": 0,
-      "bolas_para_gol": 2,
+      "bolas_para_gol": 1,
       "gols_perdidos": 0
     },
     {
@@ -197,7 +197,7 @@
       "drible_certo": 0,
       "gols": 1,
       "bolas_para_gol": 1,
-      "gols_perdidos": 0
+      "gols_perdidos": 2
     },
     {
       "nome": "Rosa",
@@ -207,7 +207,7 @@
       "drible_certo": 0,
       "gols": 0,
       "bolas_para_gol": 1,
-      "gols_perdidos": 2
+      "gols_perdidos": 3
     },
     {
       "nome": "Lukayann",
@@ -216,8 +216,8 @@
       "chance_criada": 3,
       "drible_certo": 1,
       "gols": 0,
-      "bolas_para_gol": 0,
-      "gols_perdidos": 3
+      "bolas_para_gol": 2,
+      "gols_perdidos": 2
     },
     {
       "nome": "Daniel",
@@ -233,7 +233,7 @@
       "nome": "Halanzinho",
       "posicao": "Atacante",
       "jogos": 1,
-      "chance_criada": 3,
+      "chance_criada": 2,
       "drible_certo": 1,
       "gols": 0,
       "bolas_para_gol": 1,
