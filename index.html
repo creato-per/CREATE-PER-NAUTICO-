@@ -1,1266 +1,149 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<head>
 
-<title>Create Per | Náutico</title>
+    <meta charset="UTF-8">
 
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
->
+    <title>Create Per | Náutico</title>
 
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
->
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
-<style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
-    :root {
 
-        --primary: #990000;
-        --primary-dark: #660000;
-        --primary-light: #b31414;
+    <style>
 
-        --bg-main: #120303;
+        :root {
 
-        --bg-card:
-            rgba(255, 255, 255, 0.03);
+            --primary: #990000;
+            --primary-dark: #660000;
+            --primary-light: #b31414;
 
-        --bg-card-hover:
-            rgba(255, 255, 255, 0.06);
+            --bg-main: #120303;
 
-        --border:
-            rgba(255, 255, 255, 0.1);
+            --bg-card:
+                rgba(255, 255, 255, 0.03);
 
-        --border-focus:
-            rgba(255, 255, 255, 0.3);
+            --bg-card-hover:
+                rgba(255, 255, 255, 0.06);
 
-        --text-main: #f9f9f9;
+            --border:
+                rgba(255, 255, 255, 0.1);
 
-        --text-muted:
-            rgba(255, 255, 255, 0.6);
+            --border-focus:
+                rgba(255, 255, 255, 0.3);
 
-        --accent: #e53935;
+            --text-main: #f9f9f9;
 
-    }
+            --text-muted:
+                rgba(255, 255, 255, 0.6);
 
-
-    * {
-
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-
-    }
-
-
-    body {
-
-        background:
-            var(--bg-main);
-
-        background-image:
-
-            radial-gradient(
-
-                circle at 50% 0%,
-
-                #300606 0%,
-
-                var(--bg-main) 70%
-
-            );
-
-        color:
-            var(--text-main);
-
-        font-family:
-
-            'Inter',
-
-            system-ui,
-
-            -apple-system,
-
-            sans-serif;
-
-        min-height:
-            100vh;
-
-        display:
-            flex;
-
-        flex-direction:
-            column;
-
-        -webkit-font-smoothing:
-            antialiased;
-
-    }
-
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-
-        padding:
-            40px 20px 20px;
-
-        max-width:
-            1200px;
-
-        width:
-            100%;
-
-        margin:
-            0 auto;
-
-        display:
-            flex;
-
-        justify-content:
-            space-between;
-
-        align-items:
-            center;
-
-        flex-wrap:
-            wrap;
-
-        gap:
-            20px;
-
-    }
-
-
-    .logo h1 {
-
-        font-size:
-            32px;
-
-        font-weight:
-            800;
-
-        letter-spacing:
-            -0.5px;
-
-        background:
-
-            linear-gradient(
-
-                135deg,
-
-                #ffffff 0%,
-
-                #ff8a8a 100%
-
-            );
-
-        -webkit-background-clip:
-            text;
-
-        -webkit-text-fill-color:
-            transparent;
-
-    }
-
-
-    .logo p {
-
-        margin-top:
-            4px;
-
-        font-size:
-            14px;
-
-        font-weight:
-            500;
-
-        color:
-            var(--text-muted);
-
-        letter-spacing:
-            1px;
-
-        text-transform:
-            uppercase;
-
-    }
-
-    .nav-btn {
-
-        background:
-            var(--bg-card);
-
-        color:
-            var(--text-main);
-
-        border:
-            1px solid
-            var(--border);
-
-        border-radius:
-            12px;
-
-        padding:
-            12px 20px;
-
-        font-size:
-            14px;
-
-        font-weight:
-            600;
-
-        text-decoration:
-            none;
-
-        backdrop-filter:
-            blur(10px);
-
-        transition:
-            all 0.2s ease;
-
-        display:
-            inline-flex;
-
-        align-items:
-            center;
-
-        gap:
-            8px;
-
-    }
-
-    .nav-btn:hover {
-
-        border-color:
-            var(--border-focus);
-
-        background:
-            rgba(255, 255, 255, 0.08);
-
-        color:
-            #ffffff;
-
-        transform:
-            translateY(-1px);
-
-    }
-
-
-    /* =========================
-       FILTROS
-    ========================= */
-
-    .filtros {
-
-        max-width:
-            1200px;
-
-        width:
-            100%;
-
-        margin:
-            10px auto 30px;
-
-        padding:
-            0 20px;
-
-        display:
-            flex;
-
-        gap:
-            16px;
-
-        flex-wrap:
-            wrap;
-
-    }
-
-
-    input,
-    select {
-
-        background:
-            var(--bg-card);
-
-        color:
-            var(--text-main);
-
-        border:
-
-            1px solid
-            var(--border);
-
-        border-radius:
-            12px;
-
-        padding:
-            14px 18px;
-
-        font-size:
-            14px;
-
-        font-family:
-            inherit;
-
-        outline:
-            none;
-
-        backdrop-filter:
-            blur(10px);
-
-        transition:
-            all 0.2s ease;
-
-    }
-
-
-    input:hover,
-    select:hover {
-
-        border-color:
-            var(--border-focus);
-
-        background:
-            rgba(255, 255, 255, 0.05);
-
-    }
-
-
-    input:focus,
-    select:focus {
-
-        border-color:
-            var(--accent);
-
-        box-shadow:
-
-            0 0 0 3px
-
-            rgba(
-                229,
-                57,
-                53,
-                0.15
-            );
-
-        background:
-
-            rgba(
-                255,
-                255,
-                255,
-                0.06
-            );
-
-    }
-
-
-    input {
-
-        flex:
-            1;
-
-        min-width:
-            260px;
-
-    }
-
-
-    select {
-
-        min-width:
-            220px;
-
-        cursor:
-            pointer;
-
-    }
-
-
-    select option {
-
-        background:
-            #1f0505;
-
-        color:
-            var(--text-main);
-
-        padding:
-            10px;
-
-    }
-
-
-    input::placeholder {
-
-        color:
-            var(--text-muted);
-
-    }
-
-
-    /* =========================
-       CONTAINER
-    ========================= */
-
-    .container {
-
-        max-width:
-            1200px;
-
-        width:
-            100%;
-
-        margin:
-            0 auto;
-
-        padding:
-            0 20px 60px;
-
-        flex:
-            1;
-
-    }
-
-
-    /* =========================
-       GRID
-    ========================= */
-
-    .grid-cards {
-
-        display:
-            grid;
-
-        grid-template-columns:
-
-            repeat(
-
-                auto-fill,
-
-                minmax(
-                    360px,
-                    1fr
-                )
-
-            );
-
-        gap:
-            20px;
-
-    }
-
-
-    /* =========================
-       CARD
-    ========================= */
-
-    .card-atleta {
-
-        background:
-            var(--bg-card);
-
-        border:
-
-            1px solid
-            var(--border);
-
-        border-radius:
-            16px;
-
-        padding:
-            24px;
-
-        backdrop-filter:
-            blur(12px);
-
-        box-shadow:
-
-            0 10px 30px
-
-            rgba(
-                0,
-                0,
-                0,
-                0.3
-            );
-
-        transition:
-            all 0.2s ease;
-
-    }
-
-
-    .card-atleta:hover {
-
-        border-color:
-            var(--border-focus);
-
-        background:
-            var(--bg-card-hover);
-
-        transform:
-            translateY(-2px);
-
-    }
-
-
-    .card-header {
-
-        display:
-            flex;
-
-        justify-content:
-            space-between;
-
-        align-items:
-            flex-start;
-
-        margin-bottom:
-            16px;
-
-    }
-
-
-    .card-info h3 {
-
-        font-size:
-            18px;
-
-        font-weight:
-            700;
-
-        color:
-            #fff;
-
-        margin-bottom:
-            6px;
-
-    }
-
-
-    .posicao {
-
-        font-size:
-            11px;
-
-        font-weight:
-            600;
-
-        background:
-
-            rgba(
-                255,
-                255,
-                255,
-                0.06
-            );
-
-        border:
-
-            1px solid
-            var(--border);
-
-        padding:
-            5px 10px;
-
-        border-radius:
-            20px;
-
-        letter-spacing:
-            0.5px;
-
-        display:
-            inline-block;
-
-        color:
-            var(--text-muted);
-
-    }
-
-
-    .badge-geral {
-
-        font-size:
-            18px;
-
-        font-weight:
-            800;
-
-        background:
-
-            linear-gradient(
-
-                135deg,
-
-                #fff 0%,
-
-                #ff8a8a 100%
-
-            );
-
-        -webkit-background-clip:
-            text;
-
-        -webkit-text-fill-color:
-            transparent;
-
-    }
-
-
-    /* =========================
-       MÉTRICAS
-    ========================= */
-
-    .card-metrics {
-
-        display:
-            grid;
-
-        grid-template-columns:
-            repeat(3, 1fr);
-
-        gap:
-            10px;
-
-        background:
-
-            rgba(
-                0,
-                0,
-                0,
-                0.2
-            );
-
-        border:
-
-            1px solid
-            var(--border);
-
-        border-radius:
-            12px;
-
-        padding:
-            12px;
-
-        margin-bottom:
-            16px;
-
-        text-align:
-            center;
-
-    }
-
-
-    .metric-item span {
-
-        display:
-            block;
-
-        font-size:
-            10px;
-
-        text-transform:
-            uppercase;
-
-        letter-spacing:
-            0.8px;
-
-        color:
-            var(--text-muted);
-
-        margin-bottom:
-            4px;
-
-        font-weight:
-            600;
-
-    }
-
-
-    .metric-item strong {
-
-        font-size:
-            15px;
-
-        color:
-            #fff;
-
-    }
-
-
-    /* =========================
-       DETAILS
-    ========================= */
-
-    details {
-
-        border-top:
-
-            1px solid
-            var(--border);
-
-        padding-top:
-            14px;
-
-    }
-
-
-    summary {
-
-        font-size:
-            13px;
-
-        font-weight:
-            600;
-
-        color:
-            var(--accent);
-
-        cursor:
-            pointer;
-
-        list-style:
-            none;
-
-        display:
-            flex;
-
-        align-items:
-            center;
-
-        justify-content:
-            space-between;
-
-        user-select:
-            none;
-
-        transition:
-            color 0.2s;
-
-    }
-
-
-    summary:hover {
-
-        color:
-            #ff6b6b;
-
-    }
-
-
-    summary::after {
-
-        content:
-            '▼';
-
-        font-size:
-            10px;
-
-        transition:
-            transform 0.2s ease;
-
-    }
-
-
-    details[open]
-    summary::after {
-
-        transform:
-            rotate(180deg);
-
-    }
-
-
-    .details-content {
-
-        margin-top:
-            14px;
-
-        display:
-            grid;
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap:
-            10px;
-
-        animation:
-            fadeIn 0.3s ease;
-
-    }
-
-
-    .stat-box {
-
-        background:
-
-            rgba(
-                255,
-                255,
-                255,
-                0.02
-            );
-
-        border:
-
-            1px solid
-            var(--border);
-
-        border-radius:
-            8px;
-
-        padding:
-            10px;
-
-    }
-
-
-    .stat-box span {
-
-        display:
-            block;
-
-        font-size:
-            10px;
-
-        text-transform:
-            uppercase;
-
-        color:
-            var(--text-muted);
-
-        margin-bottom:
-            2px;
-
-    }
-
-
-    .stat-box strong {
-
-        font-size:
-            14px;
-
-        color:
-            #fff;
-
-    }
-
-
-    @keyframes fadeIn {
-
-        from {
-
-            opacity:
-                0;
-
-            transform:
-                translateY(-4px);
+            --accent: #e53935;
 
         }
 
-        to {
 
-            opacity:
-                1;
+        * {
 
-            transform:
-                translateY(0);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
 
         }
 
-    }
 
+        body {
 
-    /* =========================
-       EMPTY STATE
-    ========================= */
+            background:
+                var(--bg-main);
 
-    .empty-state {
+            background-image:
 
-        grid-column:
-            1 / -1;
+                radial-gradient(
 
-        text-align:
-            center;
+                    circle at 50% 0%,
 
-        padding:
-            50px;
+                    #300606 0%,
 
-        color:
-            var(--text-muted);
+                    var(--bg-main) 70%
 
-        font-style:
-            italic;
+                );
 
-        background:
-            var(--bg-card);
+            color:
+                var(--text-main);
 
-        border:
+            font-family:
+                'Inter',
+                system-ui,
+                -apple-system,
+                sans-serif;
 
-            1px solid
-            var(--border);
+            min-height:
+                100vh;
 
-        border-radius:
-            16px;
+            display:
+                flex;
 
-    }
+            flex-direction:
+                column;
 
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-
-        max-width:
-            1200px;
-
-        width:
-            100%;
-
-        margin:
-            0 auto;
-
-        padding:
-            30px 20px;
-
-        border-top:
-
-            1px solid
-            var(--border);
-
-        font-size:
-            13px;
-
-        color:
-            var(--text-muted);
-
-        display:
-            flex;
-
-        justify-content:
-            space-between;
-
-        align-items:
-            center;
-
-    }
-
-
-    /* =========================
-       FUNDO DO ANÚNCIO
-    ========================= */
-
-    .overlay-anuncio {
-
-        position:
-            fixed;
-
-        inset:
-            0;
-
-        background:
-
-            rgba(
-                0,
-                0,
-                0,
-                0.75
-            );
-
-        backdrop-filter:
-            blur(4px);
-
-        z-index:
-            999998;
-
-        animation:
-            fadeOverlay 0.3s ease;
-
-    }
-
-
-    /* =========================
-       CAIXA DO ANÚNCIO
-    ========================= */
-
-    .anuncio-flutuante {
-
-        position:
-            fixed;
-
-        top:
-            50%;
-
-        left:
-            50%;
-
-        transform:
-            translate(-50%, -50%);
-
-        width:
-            90vw;
-
-        max-width:
-            900px;
-
-        min-height:
-            400px;
-
-        background:
-
-            linear-gradient(
-
-                135deg,
-
-                #250505,
-
-                #120303
-
-            );
-
-        border:
-
-            1px solid
-
-            rgba(
-                255,
-                255,
-                255,
-                0.15
-            );
-
-        border-radius:
-            24px;
-
-        padding:
-            40px;
-
-        z-index:
-            999999;
-
-        display:
-            flex;
-
-        justify-content:
-            center;
-
-        align-items:
-            center;
-
-        box-shadow:
-
-            0 30px 100px
-
-            rgba(
-                0,
-                0,
-                0,
-                0.9
-            );
-
-        animation:
-
-            aparecerAnuncio
-
-            0.4s ease;
-
-    }
-
-
-    .conteudo-anuncio {
-
-        display:
-            flex;
-
-        justify-content:
-            center;
-
-        align-items:
-            center;
-
-        width:
-            100%;
-
-        min-height:
-            250px;
-
-        overflow:
-            hidden;
-
-        border-radius:
-            12px;
-
-    }
-
-
-    /* =========================
-       BOTÃO FECHAR
-    ========================= */
-
-    .fechar-anuncio {
-
-        position:
-            absolute;
-
-        top:
-            15px;
-
-        right:
-            15px;
-
-        width:
-            42px;
-
-        height:
-            42px;
-
-        border-radius:
-            50%;
-
-        border:
-
-            1px solid
-
-            rgba(
-                255,
-                255,
-                255,
-                0.2
-            );
-
-        background:
-            var(--primary);
-
-        color:
-            white;
-
-        font-size:
-            20px;
-
-        font-weight:
-            bold;
-
-        cursor:
-            pointer;
-
-        display:
-            flex;
-
-        align-items:
-            center;
-
-        justify-content:
-            center;
-
-        z-index:
-            1000000;
-
-        transition:
-            all 0.2s ease;
-
-    }
-
-
-    .fechar-anuncio:hover {
-
-        background:
-            var(--accent);
-
-        transform:
-            scale(1.12);
-
-    }
-
-
-    /* =========================
-       ANIMAÇÕES
-    ========================= */
-
-    @keyframes fadeOverlay {
-
-        from {
-
-            opacity:
-                0;
+            -webkit-font-smoothing:
+                antialiased;
 
         }
 
-        to {
 
-            opacity:
-                1;
-
-        }
-
-    }
-
-
-    @keyframes aparecerAnuncio {
-
-        from {
-
-            opacity:
-                0;
-
-            transform:
-
-                translate(
-                    -50%,
-                    -45%
-                )
-
-                scale(0.95);
-
-        }
-
-        to {
-
-            opacity:
-                1;
-
-            transform:
-
-                translate(
-                    -50%,
-                    -50%
-                )
-
-                scale(1);
-
-        }
-
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 768px) {
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
 
             padding:
-                25px 20px 10px;
+                40px 20px 20px;
+
+            max-width:
+                1200px;
+
+            width:
+                100%;
+
+            margin:
+                0 auto;
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                20px;
 
         }
 
@@ -1268,426 +151,1260 @@
         .logo h1 {
 
             font-size:
-                26px;
+                32px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                -0.5px;
+
+            background:
+
+                linear-gradient(
+
+                    135deg,
+
+                    #ffffff 0%,
+
+                    #ff8a8a 100%
+
+                );
+
+            -webkit-background-clip:
+                text;
+
+            -webkit-text-fill-color:
+                transparent;
 
         }
 
+
+        .logo p {
+
+            margin-top:
+                4px;
+
+            font-size:
+                14px;
+
+            font-weight:
+                500;
+
+            color:
+                var(--text-muted);
+
+            letter-spacing:
+                1px;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        .nav-btn {
+
+            background:
+                var(--bg-card);
+
+            color:
+                var(--text-main);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                12px;
+
+            padding:
+                12px 20px;
+
+            font-size:
+                14px;
+
+            font-weight:
+                600;
+
+            text-decoration:
+                none;
+
+            backdrop-filter:
+                blur(10px);
+
+            transition:
+                all 0.2s ease;
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                8px;
+
+        }
+
+
+        .nav-btn:hover {
+
+            border-color:
+                var(--border-focus);
+
+            background:
+                rgba(255, 255, 255, 0.08);
+
+            color:
+                #ffffff;
+
+            transform:
+                translateY(-1px);
+
+        }
+
+
+        /* =========================
+           FILTROS
+        ========================= */
 
         .filtros {
 
+            max-width:
+                1200px;
+
+            width:
+                100%;
+
+            margin:
+                10px auto 30px;
+
             padding:
-                0 16px;
+                0 20px;
+
+            display:
+                flex;
 
             gap:
-                12px;
+                16px;
+
+            flex-wrap:
+                wrap;
 
         }
 
+
+        input,
+        select {
+
+            background:
+                var(--bg-card);
+
+            color:
+                var(--text-main);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                12px;
+
+            padding:
+                14px 18px;
+
+            font-size:
+                14px;
+
+            font-family:
+                inherit;
+
+            outline:
+                none;
+
+            backdrop-filter:
+                blur(10px);
+
+            transition:
+                all 0.2s ease;
+
+        }
+
+
+        input:hover,
+        select:hover {
+
+            border-color:
+                var(--border-focus);
+
+            background:
+                rgba(255, 255, 255, 0.05);
+
+        }
+
+
+        input:focus,
+        select:focus {
+
+            border-color:
+                var(--accent);
+
+            box-shadow:
+
+                0 0 0 3px
+
+                rgba(
+                    229,
+                    57,
+                    53,
+                    0.15
+                );
+
+            background:
+
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.06
+                );
+
+        }
+
+
+        input {
+
+            flex:
+                1;
+
+            min-width:
+                260px;
+
+        }
+
+
+        select {
+
+            min-width:
+                220px;
+
+            cursor:
+                pointer;
+
+        }
+
+
+        select option {
+
+            background:
+                #1f0505;
+
+            color:
+                var(--text-main);
+
+            padding:
+                10px;
+
+        }
+
+
+        input::placeholder {
+
+            color:
+                var(--text-muted);
+
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
 
         .container {
 
+            max-width:
+                1200px;
+
+            width:
+                100%;
+
+            margin:
+                0 auto;
+
             padding:
-                0 16px 40px;
+                0 20px 60px;
+
+            flex:
+                1;
 
         }
 
+
+        /* =========================
+           GRID
+        ========================= */
 
         .grid-cards {
 
+            display:
+                grid;
+
             grid-template-columns:
-                1fr;
+
+                repeat(
+
+                    auto-fill,
+
+                    minmax(
+                        360px,
+                        1fr
+                    )
+
+                );
+
+            gap:
+                20px;
 
         }
 
 
-        .anuncio-flutuante {
+        /* =========================
+           CARD
+        ========================= */
 
-            width:
-                94vw;
+        .card-atleta {
 
-            min-height:
-                330px;
+            background:
+                var(--bg-card);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                16px;
 
             padding:
-                45px 10px 20px;
+                24px;
+
+            backdrop-filter:
+                blur(12px);
+
+            box-shadow:
+
+                0 10px 30px
+
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.3
+                );
+
+            transition:
+                all 0.2s ease;
+
+        }
+
+
+        .card-atleta:hover {
+
+            border-color:
+                var(--border-focus);
+
+            background:
+                var(--bg-card-hover);
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .card-header {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                flex-start;
+
+            margin-bottom:
+                16px;
+
+        }
+
+
+        .card-info h3 {
+
+            font-size:
+                18px;
+
+            font-weight:
+                700;
+
+            color:
+                #fff;
+
+            margin-bottom:
+                6px;
+
+        }
+
+
+        .posicao {
+
+            font-size:
+                11px;
+
+            font-weight:
+                600;
+
+            background:
+
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.06
+                );
+
+            border:
+                1px solid
+                var(--border);
+
+            padding:
+                5px 10px;
+
+            border-radius:
+                20px;
+
+            letter-spacing:
+                0.5px;
+
+            display:
+                inline-block;
+
+            color:
+                var(--text-muted);
+
+        }
+
+
+        .badge-geral {
+
+            font-size:
+                18px;
+
+            font-weight:
+                800;
+
+            background:
+
+                linear-gradient(
+
+                    135deg,
+
+                    #fff 0%,
+
+                    #ff8a8a 100%
+
+                );
+
+            -webkit-background-clip:
+                text;
+
+            -webkit-text-fill-color:
+                transparent;
+
+        }
+
+
+        /* =========================
+           MÉTRICAS
+        ========================= */
+
+        .card-metrics {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                10px;
+
+            background:
+
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.2
+                );
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                12px;
+
+            padding:
+                12px;
+
+            margin-bottom:
+                16px;
+
+            text-align:
+                center;
+
+        }
+
+
+        .metric-item span {
+
+            display:
+                block;
+
+            font-size:
+                10px;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                0.8px;
+
+            color:
+                var(--text-muted);
+
+            margin-bottom:
+                4px;
+
+            font-weight:
+                600;
+
+        }
+
+
+        .metric-item strong {
+
+            font-size:
+                15px;
+
+            color:
+                #fff;
+
+        }
+
+
+        /* =========================
+           DETAILS
+        ========================= */
+
+        details {
+
+            border-top:
+                1px solid
+                var(--border);
+
+            padding-top:
+                14px;
+
+        }
+
+
+        summary {
+
+            font-size:
+                13px;
+
+            font-weight:
+                600;
+
+            color:
+                var(--accent);
+
+            cursor:
+                pointer;
+
+            list-style:
+                none;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            user-select:
+                none;
+
+            transition:
+                color 0.2s;
+
+        }
+
+
+        summary:hover {
+
+            color:
+                #ff6b6b;
+
+        }
+
+
+        summary::after {
+
+            content:
+                '▼';
+
+            font-size:
+                10px;
+
+            transition:
+                transform 0.2s ease;
+
+        }
+
+
+        details[open]
+        summary::after {
+
+            transform:
+                rotate(180deg);
+
+        }
+
+
+        .details-content {
+
+            margin-top:
+                14px;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap:
+                10px;
+
+            animation:
+                fadeIn 0.3s ease;
+
+        }
+
+
+        .stat-box {
+
+            background:
+
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.02
+                );
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                8px;
+
+            padding:
+                10px;
+
+        }
+
+
+        .stat-box span {
+
+            display:
+                block;
+
+            font-size:
+                10px;
+
+            text-transform:
+                uppercase;
+
+            color:
+                var(--text-muted);
+
+            margin-bottom:
+                2px;
+
+        }
+
+
+        .stat-box strong {
+
+            font-size:
+                14px;
+
+            color:
+                #fff;
+
+        }
+
+
+        @keyframes fadeIn {
+
+            from {
+
+                opacity:
+                    0;
+
+                transform:
+                    translateY(-4px);
+
+            }
+
+            to {
+
+                opacity:
+                    1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        /* =========================
+           EMPTY STATE
+        ========================= */
+
+        .empty-state {
+
+            grid-column:
+                1 / -1;
+
+            text-align:
+                center;
+
+            padding:
+                50px;
+
+            color:
+                var(--text-muted);
+
+            font-style:
+                italic;
+
+            background:
+                var(--bg-card);
+
+            border:
+                1px solid
+                var(--border);
+
+            border-radius:
+                16px;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            max-width:
+                1200px;
+
+            width:
+                100%;
+
+            margin:
+                0 auto;
+
+            padding:
+                30px 20px;
+
+            border-top:
+                1px solid
+                var(--border);
+
+            font-size:
+                13px;
+
+            color:
+                var(--text-muted);
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+        }
+
+
+        /* =========================
+           FUNDO DO ANÚNCIO
+        ========================= */
+
+        .overlay-anuncio {
+
+            position:
+                fixed;
+
+            inset:
+                0;
+
+            background:
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.75
+                );
+
+            backdrop-filter:
+                blur(4px);
+
+            z-index:
+                999998;
+
+            animation:
+                fadeOverlay 0.3s ease;
+
+        }
+
+
+        /* =========================
+           CAIXA DO ANÚNCIO
+        ========================= */
+
+        .anuncio-flutuante {
+
+            position:
+                fixed;
+
+            top:
+                50%;
+
+            left:
+                50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            width:
+                90vw;
+
+            max-width:
+                900px;
+
+            min-height:
+                400px;
+
+            background:
+
+                linear-gradient(
+
+                    135deg,
+
+                    #250505,
+
+                    #120303
+
+                );
+
+            border:
+                1px solid
+
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.15
+                );
+
+            border-radius:
+                24px;
+
+            padding:
+                40px;
+
+            z-index:
+                999999;
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            box-shadow:
+
+                0 30px 100px
+
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.9
+                );
+
+            animation:
+                aparecerAnuncio
+                0.4s ease;
 
         }
 
 
         .conteudo-anuncio {
 
-            transform:
-                scale(0.9);
+            display:
+                flex;
 
-            transform-origin:
+            justify-content:
                 center;
+
+            align-items:
+                center;
+
+            width:
+                100%;
+
+            min-height:
+                250px;
+
+            overflow:
+                hidden;
+
+            border-radius:
+                12px;
 
         }
 
-    }
 
-</style>
+        /* =========================
+           BOTÃO FECHAR
+        ========================= */
 
-</head><body><!-- HEADER -->
+        .fechar-anuncio {
 
-<header>
+            position:
+                absolute;
 
-    <div class="logo">
+            top:
+                15px;
 
-        <h1>
-            Create Per Náutico
-        </h1>
+            right:
+                15px;
 
-        <p>
-            Scout • Elenco Intelligence
-        </p>
+            width:
+                42px;
 
-    </div>
+            height:
+                42px;
 
-    <a href="comparativo.html" class="nav-btn">
-        📊 Ver Comparativo & Ranking
-    </a>
+            border-radius:
+                50%;
 
-</header>
+            border:
+                1px solid
+
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.2
+                );
+
+            background:
+                var(--primary);
+
+            color:
+                white;
+
+            font-size:
+                20px;
+
+            font-weight:
+                bold;
+
+            cursor:
+                pointer;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            z-index:
+                1000000;
+
+            transition:
+                all 0.2s ease;
+
+        }
 
 
-<!-- FILTROS -->
+        .fechar-anuncio:hover {
 
-<section class="filtros">
+            background:
+                var(--accent);
 
-    <input
-        type="text"
-        id="pesquisa"
-        placeholder="Pesquisar atleta pelo nome..."
-    >
+            transform:
+                scale(1.12);
 
-
-    <select id="posicao">
-
-        <option value="">
-            Todas as posições
-        </option>
-
-        <option value="Goleiro">
-            Goleiro
-        </option>
-
-        <option value="Defensor">
-            Defensor
-        </option>
-
-        <option value="Meio-Campista">
-            Meio-Campista
-        </option>
-
-        <option value="Atacante">
-            Atacante
-        </option>
-
-    </select>
-
-</section>
+        }
 
 
-<!-- CARDS -->
+        /* =========================
+           ANIMAÇÕES
+        ========================= */
 
-<main class="container">
+        @keyframes fadeOverlay {
 
-    <div
-        id="grid-cards"
-        class="grid-cards"
-    >
+            from {
 
-        <div class="empty-state">
+                opacity:
+                    0;
 
-            Carregando dados dos atletas...
+            }
+
+            to {
+
+                opacity:
+                    1;
+
+            }
+
+        }
+
+
+        @keyframes aparecerAnuncio {
+
+            from {
+
+                opacity:
+                    0;
+
+                transform:
+
+                    translate(
+                        -50%,
+                        -45%
+                    )
+
+                    scale(0.95);
+
+            }
+
+            to {
+
+                opacity:
+                    1;
+
+                transform:
+
+                    translate(
+                        -50%,
+                        -50%
+                    )
+
+                    scale(1);
+
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            header {
+
+                padding:
+                    25px 20px 10px;
+
+            }
+
+
+            .logo h1 {
+
+                font-size:
+                    26px;
+
+            }
+
+
+            .filtros {
+
+                padding:
+                    0 16px;
+
+                gap:
+                    12px;
+
+            }
+
+
+            .container {
+
+                padding:
+                    0 16px 40px;
+
+            }
+
+
+            .grid-cards {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .anuncio-flutuante {
+
+                width:
+                    94vw;
+
+                min-height:
+                    330px;
+
+                padding:
+                    45px 10px 20px;
+
+            }
+
+
+            .conteudo-anuncio {
+
+                transform:
+                    scale(0.9);
+
+                transform-origin:
+                    center;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <div class="logo">
+
+            <h1>
+                Create Per Náutico
+            </h1>
+
+            <p>
+                Scout • Elenco Intelligence
+            </p>
 
         </div>
 
-    </div>
 
-</main>
+        <a
+            href="comparativo.html"
+            class="nav-btn"
+        >
 
+            📊 Ver Comparativo & Ranking
 
-<!-- FOOTER -->
+        </a>
 
-<footer>
+    </header>
 
-    <p>
 
-        &copy; 2026
-        Create Per Náutico
-        • Football Data Intelligence
+    <!-- =========================
+         FILTROS
+    ========================= -->
 
-    </p>
+    <section class="filtros">
 
-</footer>
+        <input
+            type="text"
+            id="pesquisa"
+            placeholder="Pesquisar atleta pelo nome..."
+        >
 
 
-<!-- OVERLAY ESCURO -->
+        <select id="posicao">
 
-<div
-    id="overlay-anuncio"
-    class="overlay-anuncio"
-></div>
+            <option value="">
+                Todas as posições
+            </option>
 
+            <option value="Goleiro">
+                Goleiro
+            </option>
 
-<!-- CAIXA FLUTUANTE -->
+            <option value="Defensor">
+                Defensor
+            </option>
 
-<div
-    id="anuncio-flutuante"
-    class="anuncio-flutuante"
->
+            <option value="Meio-Campista">
+                Meio-Campista
+            </option>
 
-    <button
-        id="fechar-anuncio"
-        class="fechar-anuncio"
-        aria-label="Fechar anúncio"
-    >
+            <option value="Atacante">
+                Atacante
+            </option>
 
-        ✕
+        </select>
 
-    </button>
+    </section>
 
 
-    <div class="conteudo-anuncio">
+    <!-- =========================
+         CARDS
+    ========================= -->
 
+    <main class="container">
 
-        <!-- CÓDIGO DO ANÚNCIO -->
-
-        <script>
-
-            atOptions = {
-
-                'key':
-                    'f91292284fc8fd9b107d47a6e274fe79',
-
-                'format':
-                    'iframe',
-
-                'height':
-                    250,
-
-                'width':
-                    300,
-
-                'params':
-                    {}
-
-            };
-
-        </script>
-
-
-        <script src="https://www.highrevenueformat.com/f91292284fc8fd9b107d47a6e274fe79/invoke.js"></script>
-
-
-    </div>
-
-</div>
-
-
-<!-- JAVASCRIPT DO SCOUT -->
-
-<script>
-
-    let elenco = [];
-
-    let scouts = [];
-
-
-    /* =========================
-       FONTES DOS DADOS
-    ========================= */
-
-    const fontes = {
-
-        elenco: [
-
-            "https://raw.githubusercontent.com/creato-per/CREATE-PER-NAUTICO-/main/Elenco.json",
-
-            "Elenco.json",
-
-            "elenco.json"
-
-        ],
-
-
-        dados: [
-
-            "https://raw.githubusercontent.com/creato-per/CREATE-PER-NAUTICO-/main/Dados.json",
-
-            "Dados.json",
-
-            "dados.json"
-
-        ]
-
-    };
-
-
-    /* =========================
-       NORMALIZAR TEXTO
-    ========================= */
-
-    function normalizarTexto(texto) {
-
-        return String(
-            texto || ""
-        )
-
-        .normalize(
-            "NFD"
-        )
-
-        .replace(
-            /[\u0300-\u036f]/g,
-            ""
-        )
-
-        .trim()
-
-        .toLowerCase();
-
-    }
-
-
-    /* =========================
-       BUSCAR COM FALLBACK
-    ========================= */
-
-    async function buscarComFallback(listaDeURLs) {
-
-        let ultimoErro;
-
-
-        for (
-
-            const url
-
-            of
-
-            listaDeURLs
-
-        ) {
-
-            try {
-
-                console.log(
-
-                    "Tentando carregar:",
-
-                    url
-
-                );
-
-
-                const resposta =
-
-                    await fetch(
-
-                        url,
-
-                        {
-
-                            cache:
-                                "no-store"
-
-                        }
-
-                    );
-
-
-                if (
-
-                    !resposta.ok
-
-                ) {
-
-                    throw new Error(
-
-                        `HTTP ${resposta.status}`
-
-                    );
-
-                }
-
-
-                const dados =
-
-                    await resposta.json();
-
-
-                console.log(
-
-                    "Dados carregados com sucesso:",
-
-                    url
-
-                );
-
-
-                return dados;
-
-            }
-
-
-            catch (erro) {
-
-                console.warn(
-
-                    "Falha ao carregar:",
-
-                    url,
-
-                    erro
-
-                );
-
-
-                ultimoErro =
-                    erro;
-
-            }
-
-        }
-
-
-        throw new Error(
-
-            "Nenhuma fonte respondeu corretamente. " +
-
-            (
-
-                ultimoErro
-
-                ? ultimoErro.message
-
-                : ""
-
-            )
-
-        );
-
-    }
-
-
-    /* =========================
-       CARREGAR DADOS
-    ========================= */
-
-    async function carregarDados() {
-
-        const grid =
-
-            document.getElementById(
-
-                "grid-cards"
-
-            );
-
-
-        grid.innerHTML = `
+        <div
+            id="grid-cards"
+            class="grid-cards"
+        >
 
             <div class="empty-state">
 
@@ -1695,779 +1412,414 @@
 
             </div>
 
-        `;
+        </div>
 
+    </main>
 
-        try {
 
-            const [
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
-                dadosElenco,
+    <footer>
 
-                dadosScout
+        <p>
 
-            ] =
+            &copy; 2026
+            Create Per Náutico
+            • Football Data Intelligence
 
-            await Promise.all([
+        </p>
 
-                buscarComFallback(
+    </footer>
 
-                    fontes.elenco
 
-                ),
+    <!-- =========================
+         OVERLAY DO ANÚNCIO
+    ========================= -->
 
-                buscarComFallback(
+    <div
+        id="overlay-anuncio"
+        class="overlay-anuncio"
+    ></div>
 
-                    fontes.dados
 
-                )
+    <!-- =========================
+         CAIXA FLUTUANTE DO ANÚNCIO
+    ========================= -->
 
-            ]);
+    <div
+        id="anuncio-flutuante"
+        class="anuncio-flutuante"
+    >
 
+        <button
+            id="fechar-anuncio"
+            class="fechar-anuncio"
+            aria-label="Fechar anúncio"
+        >
 
-            /* =========================
-               VALIDAR ELENCO
-            ========================= */
+            ✕
 
-            if (
+        </button>
 
-                !dadosElenco
 
-                ||
+        <div class="conteudo-anuncio">
 
-                !Array.isArray(
 
-                    dadosElenco.atletas
+            <!-- CÓDIGO DO ANÚNCIO -->
 
-                )
+            <script>
 
-            ) {
+                atOptions = {
 
-                throw new Error(
+                    'key':
+                        'f91292284fc8fd9b107d47a6e274fe79',
 
-                    "Os dados do elenco não possuem um array válido chamado 'atletas'."
+                    'format':
+                        'iframe',
 
-                );
+                    'height':
+                        250,
 
-            }
+                    'width':
+                        300,
 
+                    'params':
+                        {}
 
-            /* =========================
-               VALIDAR SCOUT
-            ========================= */
+                };
 
-            if (
+            </script>
 
-                !dadosScout
 
-                ||
+            <script
+                src="https://www.highrevenueformat.com/f91292284fc8fd9b107d47a6e274fe79/invoke.js"
+            ></script>
 
-                !Array.isArray(
 
-                    dadosScout.atletas
+        </div>
 
-                )
+    </div>
 
-            ) {
 
-                throw new Error(
+    <!-- =========================
+         JAVASCRIPT DO SCOUT
+    ========================= -->
 
-                    "Os dados do scout não possuem um array válido chamado 'atletas'."
+    <script>
 
-                );
+        let elenco = [];
 
-            }
+        let scouts = [];
 
 
-            elenco =
+        /* =========================
+           FONTES DOS DADOS
+        ========================= */
 
-                dadosElenco.atletas;
+        const fontes = {
 
+            elenco: [
 
-            scouts =
+                "https://raw.githubusercontent.com/creato-per/CREATE-PER-NAUTICO-/main/Elenco.json",
 
-                dadosScout.atletas;
+                "Elenco.json",
 
+                "elenco.json"
 
-            console.log(
+            ],
 
-                "TOTAL DE ATLETAS:",
 
-                elenco.length
+            dados: [
 
-            );
+                "https://raw.githubusercontent.com/creato-per/CREATE-PER-NAUTICO-/main/Dados.json",
 
+                "Dados.json",
 
-            console.log(
+                "dados.json"
 
-                "TOTAL DE SCOUTS:",
+            ]
 
-                scouts.length
+        };
 
-            );
 
+        /* =========================
+           NORMALIZAR TEXTO
+        ========================= */
 
-            if (
+        function normalizarTexto(texto) {
 
-                elenco.length === 0
+            return String(
+                texto || ""
+            )
 
-            ) {
+            .normalize(
+                "NFD"
+            )
 
-                throw new Error(
+            .replace(
+                /[\u0300-\u036f]/g,
+                ""
+            )
 
-                    "O arquivo do elenco foi carregado, mas não possui atletas."
+            .trim()
 
-                );
-
-            }
-
-
-            renderizar();
+            .toLowerCase();
 
         }
 
 
-        catch (erro) {
+        /* =========================
+           BUSCAR COM FALLBACK
+        ========================= */
 
-            console.error(
+        async function buscarComFallback(
+            listaDeURLs
+        ) {
 
-                "ERRO CRÍTICO:",
+            let ultimoErro;
 
-                erro
 
-            );
+            for (
+                const url of listaDeURLs
+            ) {
 
+                try {
 
-            grid.innerHTML = `
+                    console.log(
+                        "Tentando carregar:",
+                        url
+                    );
 
-                <div
-                    class="empty-state"
-                    style="
-                        color:#ff8a8a;
-                        font-style:normal;
-                    "
-                >
 
-                    <strong>
+                    const resposta =
+                        await fetch(
+                            url,
+                            {
+                                cache:
+                                    "no-store"
+                            }
+                        );
 
-                        Erro ao carregar os atletas.
-
-                    </strong>
-
-                    <br><br>
-
-                    ${erro.message}
-
-                </div>
-
-            `;
-
-        }
-
-    }
-
-
-    /* =========================
-       ENCONTRAR SCOUT
-    ========================= */
-
-    function pegarScout(nome) {
-
-        const nomeNormalizado =
-
-            normalizarTexto(
-                nome
-            );
-
-
-        const jogadorEncontrado =
-
-            scouts.find(
-
-                jogador =>
-
-                    normalizarTexto(
-
-                        jogador.nome
-
-                    )
-
-                    ===
-
-                    nomeNormalizado
-
-            );
-
-
-        return (
-
-            jogadorEncontrado
-
-            ||
-
-            {
-
-                jogos:
-                    0,
-
-                participacao_em_gol:
-                    0,
-
-                bloqueio:
-                    0,
-
-                desarme:
-                    0,
-
-                chance_criada:
-                    0,
-
-                drible_certo:
-                    0,
-
-                chute:
-                    0,
-
-                chute_no_gol:
-                    0
-
-            }
-
-        );
-
-    }
-
-
-    /* =========================
-       RENDERIZAR
-    ========================= */
-
-    function renderizar() {
-
-        const grid =
-
-            document.getElementById(
-
-                "grid-cards"
-
-            );
-
-
-        const campoPesquisa =
-
-            document.getElementById(
-
-                "pesquisa"
-
-            );
-
-
-        const selectPosicao =
-
-            document.getElementById(
-
-                "posicao"
-
-            );
-
-
-        const pesquisa =
-
-            normalizarTexto(
-
-                campoPesquisa
-                    ? campoPesquisa.value
-                    : ""
-
-            );
-
-
-        const filtroPosicao =
-
-            selectPosicao
-                ? selectPosicao.value
-                : "";
-
-
-        const jogadoresFiltrados =
-
-            elenco.filter(
-
-                jogador => {
 
                     if (
-
-                        !jogador
-
-                        ||
-
-                        !jogador.nome
-
+                        !resposta.ok
                     ) {
 
-                        return false;
+                        throw new Error(
+                            `HTTP ${resposta.status}`
+                        );
 
                     }
 
 
-                    const nome =
-
-                        normalizarTexto(
-
-                            jogador.nome
-
-                        );
+                    const dados =
+                        await resposta.json();
 
 
-                    const posicao =
-
-                        String(
-
-                            jogador.posicao || ""
-
-                        )
-
-                        .trim();
-
-
-                    const passaPesquisa =
-
-                        nome.includes(
-
-                            pesquisa
-
-                        );
-
-
-                    const passaPosicao =
-
-                        !filtroPosicao
-
-                        ||
-
-                        posicao ===
-
-                        filtroPosicao;
-
-
-                    return (
-
-                        passaPesquisa
-
-                        &&
-
-                        passaPosicao
-
+                    console.log(
+                        "Dados carregados com sucesso:",
+                        url
                     );
+
+
+                    return dados;
 
                 }
 
+                catch (erro) {
+
+                    console.warn(
+                        "Falha ao carregar:",
+                        url,
+                        erro
+                    );
+
+
+                    ultimoErro =
+                        erro;
+
+                }
+
+            }
+
+
+            throw new Error(
+
+                "Nenhuma fonte respondeu corretamente. " +
+
+                (
+
+                    ultimoErro
+                    ?
+                    ultimoErro.message
+                    :
+                    ""
+
+                )
+
             );
 
+        }
 
-        grid.innerHTML = "";
 
+        /* =========================
+           CARREGAR DADOS
+        ========================= */
 
-        if (
+        async function carregarDados() {
 
-            jogadoresFiltrados.length === 0
+            const grid =
+                document.getElementById(
+                    "grid-cards"
+                );
 
-        ) {
 
             grid.innerHTML = `
 
                 <div class="empty-state">
 
-                    Nenhum atleta encontrado.
-
-                    <br><br>
-
-                    Atletas carregados:
-                    ${elenco.length}
+                    Carregando dados dos atletas...
 
                 </div>
 
             `;
 
 
-            return;
+            try {
 
-        }
+                const [
+                    dadosElenco,
+                    dadosScout
+                ] =
+                await Promise.all([
+
+                    buscarComFallback(
+                        fontes.elenco
+                    ),
+
+                    buscarComFallback(
+                        fontes.dados
+                    )
+
+                ]);
 
 
-        jogadoresFiltrados.forEach(
+                /* =========================
+                   VALIDAR ELENCO
+                ========================= */
 
-            jogador => {
+                if (
 
-                const scout =
+                    !dadosElenco
 
-                    pegarScout(
+                    ||
 
-                        jogador.nome
+                    !Array.isArray(
+                        dadosElenco.atletas
+                    )
+
+                ) {
+
+                    throw new Error(
+
+                        "Os dados do elenco não possuem um array válido chamado 'atletas'."
 
                     );
 
+                }
 
-                const partida =
 
-                    jogador.ultima_partida
+                /* =========================
+                   VALIDAR SCOUT
+                ========================= */
+
+                if (
+
+                    !dadosScout
 
                     ||
 
-                    {};
-
-
-                const defensiva =
-
-                    Number(
-
-                        partida.participacao_defensiva
-
+                    !Array.isArray(
+                        dadosScout.atletas
                     )
 
-                    ||
+                ) {
 
-                    0;
+                    throw new Error(
 
+                        "Os dados do scout não possuem um array válido chamado 'atletas'."
 
-                const criativa =
+                    );
 
-                    Number(
+                }
 
-                        partida.participacao_criativa
 
-                    )
+                elenco =
+                    dadosElenco.atletas;
 
-                    ||
 
-                    0;
+                scouts =
+                    dadosScout.atletas;
 
 
-                const ofensiva =
+                console.log(
+                    "TOTAL DE ATLETAS:",
+                    elenco.length
+                );
 
-                    Number(
 
-                        partida.participacao_ofensiva
+                console.log(
+                    "TOTAL DE SCOUTS:",
+                    scouts.length
+                );
 
-                        ??
 
-                        partida.Participacao_ofensiva
+                if (
+                    elenco.length === 0
+                ) {
 
-                        ??
+                    throw new Error(
 
-                        0
+                        "O arquivo do elenco foi carregado, mas não possui atletas."
 
-                    )
+                    );
 
-                    ||
+                }
 
-                    0;
 
+                renderizar();
 
-                const geral =
+            }
 
-                    Number(
+            catch (erro) {
 
-                        partida.geral
+                console.error(
+                    "ERRO CRÍTICO:",
+                    erro
+                );
 
-                    )
 
-                    ||
+                grid.innerHTML = `
 
-                    0;
+                    <div
+                        class="empty-state"
+                        style="
+                            color:#ff8a8a;
+                            font-style:normal;
+                        "
+                    >
 
+                        <strong>
 
-                grid.innerHTML += `
+                            Erro ao carregar os atletas.
 
-                    <div class="card-atleta">
+                        </strong>
 
+                        <br><br>
 
-                        <div class="card-header">
-
-
-                            <div class="card-info">
-
-
-                                <h3>
-
-                                    ${jogador.nome}
-
-                                </h3>
-
-
-                                <span class="posicao">
-
-                                    ${
-
-                                        jogador.posicao
-
-                                        ||
-
-                                        "Sem posição"
-
-                                    }
-
-                                </span>
-
-
-                            </div>
-
-
-                            <div class="badge-geral">
-
-                                ${geral}%
-
-                            </div>
-
-
-                        </div>
-
-
-                        <div class="card-metrics">
-
-
-                            <div class="metric-item">
-
-                                <span>
-
-                                    P.A.
-
-                                </span>
-
-                                <strong>
-
-                                    ${ofensiva}
-
-                                </strong>
-
-                            </div>
-
-
-                            <div class="metric-item">
-
-                                <span>
-
-                                    P.C.
-
-                                </span>
-
-                                <strong>
-
-                                    ${criativa}
-
-                                </strong>
-
-                            </div>
-
-
-                            <div class="metric-item">
-
-                                <span>
-
-                                    P.O.
-
-                                </span>
-
-                                <strong>
-
-                                    ${defensiva}
-
-                                </strong>
-
-                            </div>
-
-
-                        </div>
-
-
-                        <details>
-
-
-                            <summary>
-
-                                Ficha completa
-
-                            </summary>
-
-
-                            <div
-                                class="details-content"
-                            >
-
-
-                                <div class="stat-box">
-
-                                    <span>
-
-                                        Jogos
-
-                                    </span>
-
-                                    <strong>
-
-                                        ${scout.jogos ?? 0}
-
-                                    </strong>
-
-                                </div>
-
-
-                                <div class="stat-box">
-
-                                    <span>
-
-                                        Part. Gol
-
-                                    </span>
-
-                                    <strong>
-
-                                        ${
-
-                                            scout.participacao_em_gol
-
-                                            ??
-
-                                            0
-
-                                        }
-
-                                    </strong>
-
-                                </div>
-
-
-                                <div class="stat-box">
-
-                                    <span>
-
-                                        Bloqueio
-
-                                    </span>
-
-                                    <strong>
-
-                                        ${scout.bloqueio ?? 0}
-
-                                    </strong>
-
-                                </div>
-
-
-                                <div class="stat-box">
-
-                                    <span>
-
-                                        Desarme
-
-                                    </span>
-
-                                    <strong>
-
-                                        ${scout.desarme ?? 0}
-
-                                    </strong>
-
-                                </div>
-
-
-                                <div class="stat-box">
-
-                                    <span>
-
-                                        Chance Criada
-
-                                    </span>
-
-                                    <strong>
-
-                                        ${
-
-                                            scout.chance_criada
-
-                                            ??
-
-                                            0
-
-                                        }
-
-                                    </strong>
-
-                                </div>
-
-
-                                <div class="stat-box">
-
-                                    <span>
-
-                                        Drible Certo
-
-                                    </span>
-
-                                    <strong>
-
-                                        ${
-
-                                            scout.drible_certo
-
-                                            ??
-
-                                            0
-
-                                        }
-
-                                    </strong>
-
-                                </div>
-
-
-                                <div class="stat-box">
-
-                                    <span>
-
-                                        Chute
-
-                                    </span>
-
-                                    <strong>
-
-                                        ${scout.chute ?? 0}
-
-                                    </strong>
-
-                                </div>
-
-
-                                <div class="stat-box">
-
-                                    <span>
-
-                                        Chute no Gol
-
-                                    </span>
-
-                                    <strong>
-
-                                        ${
-
-                                            scout.chute_no_gol
-
-                                            ??
-
-                                            0
-
-                                        }
-
-                                    </strong>
-
-                                </div>
-
-
-                            </div>
-
-
-                        </details>
-
+                        ${erro.message}
 
                     </div>
 
@@ -2475,126 +1827,930 @@
 
             }
 
-        );
-
-    }
+        }
 
 
-    /* =========================
-       EVENTOS
-    ========================= */
+        /* =========================
+           ENCONTRAR SCOUT
+        ========================= */
 
-    document
+        function pegarScout(nome) {
 
-        .getElementById(
-
-            "pesquisa"
-
-        )
-
-        .addEventListener(
-
-            "input",
-
-            renderizar
-
-        );
+            const nomeNormalizado =
+                normalizarTexto(nome);
 
 
-    document
+            const jogadorEncontrado =
+                scouts.find(
 
-        .getElementById(
+                    jogador =>
 
-            "posicao"
+                        normalizarTexto(
+                            jogador.nome
+                        )
 
-        )
+                        ===
 
-        .addEventListener(
-
-            "change",
-
-            renderizar
-
-        );
-
-
-    /* =========================
-       INICIAR
-    ========================= */
-
-    carregarDados();
-
-</script>
-
-
-<!-- FECHAR ANÚNCIO -->
-
-<script>
-
-    document
-
-        .getElementById(
-
-            "fechar-anuncio"
-
-        )
-
-        .addEventListener(
-
-            "click",
-
-            function () {
-
-
-                const anuncio =
-
-                    document.getElementById(
-
-                        "anuncio-flutuante"
-
-                    );
-
-
-                const overlay =
-
-                    document.getElementById(
-
-                        "overlay-anuncio"
-
-                    );
-
-
-                anuncio.style.opacity =
-                    "0";
-
-
-                anuncio.style.transform =
-
-                    "translate(-50%, -45%) scale(0.95)";
-
-
-                overlay.style.opacity =
-                    "0";
-
-
-                setTimeout(
-
-                    () => {
-
-                        anuncio.remove();
-
-                        overlay.remove();
-
-                    },
-
-                    300
+                        nomeNormalizado
 
                 );
 
+
+            return (
+
+                jogadorEncontrado
+
+                ||
+
+                {
+
+                    jogos:
+                        0,
+
+                    defesas_dificeis:
+                        0,
+
+                    bolas_recuperadas:
+                        0,
+
+                    gols_evitados:
+                        0,
+
+                    chutes_sofridos:
+                        0,
+
+                    bloqueio:
+                        0,
+
+                    desarme:
+                        0,
+
+                    gols:
+                        0,
+
+                    bolas_para_gol:
+                        0,
+
+                    chance_criada:
+                        0,
+
+                    drible_certo:
+                        0,
+
+                    gols_perdidos:
+                        0
+
+                }
+
+            );
+
+        }
+
+
+        /* =========================
+           PEGAR VALOR DE ESTATÍSTICA
+        ========================= */
+
+        function valorScout(
+            scout,
+            campo
+        ) {
+
+            const valor =
+                scout[campo];
+
+            return valor ?? 0;
+
+        }
+
+
+        /* =========================
+           GERAR FICHA POR POSIÇÃO
+        ========================= */
+
+        function gerarFichaScout(
+            scout,
+            posicao
+        ) {
+
+            let estatisticas = [];
+
+
+            /* =========================
+               GOLEIROS
+            ========================= */
+
+            if (
+                posicao === "Goleiro"
+            ) {
+
+                estatisticas = [
+
+                    {
+                        nome:
+                            "Jogos",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "jogos"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Defesas difíceis",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "defesas_dificeis"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Bolas recuperadas",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "bolas_recuperadas"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Gols evitados",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "gols_evitados"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Chutes sofridos",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "chutes_sofridos"
+                            )
+                    }
+
+                ];
+
             }
 
-        );
 
-</script>
+            /* =========================
+               DEFENSORES
+            ========================= */
 
-</body></html>
+            else if (
+                posicao === "Defensor"
+            ) {
+
+                estatisticas = [
+
+                    {
+                        nome:
+                            "Jogos",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "jogos"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Bloqueios",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "bloqueio"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Desarmes",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "desarme"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Gols evitados",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "gols_evitados"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Gols",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "gols"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Bolas para gol",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "bolas_para_gol"
+                            )
+                    }
+
+                ];
+
+            }
+
+
+            /* =========================
+               MEIO-CAMPISTAS
+            ========================= */
+
+            else if (
+                posicao === "Meio-Campista"
+            ) {
+
+                estatisticas = [
+
+                    {
+                        nome:
+                            "Jogos",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "jogos"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Chances criadas",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "chance_criada"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Dribles certos",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "drible_certo"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Gols",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "gols"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Bolas para gol",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "bolas_para_gol"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Gols perdidos",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "gols_perdidos"
+                            )
+                    }
+
+                ];
+
+            }
+
+
+            /* =========================
+               ATACANTES
+            ========================= */
+
+            else if (
+                posicao === "Atacante"
+            ) {
+
+                estatisticas = [
+
+                    {
+                        nome:
+                            "Jogos",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "jogos"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Chances criadas",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "chance_criada"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Dribles certos",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "drible_certo"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Gols",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "gols"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Bolas para gol",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "bolas_para_gol"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Gols perdidos",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "gols_perdidos"
+                            )
+                    }
+
+                ];
+
+            }
+
+
+            /* =========================
+               POSIÇÃO DESCONHECIDA
+            ========================= */
+
+            else {
+
+                estatisticas = [
+
+                    {
+                        nome:
+                            "Jogos",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "jogos"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Gols",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "gols"
+                            )
+                    },
+
+                    {
+                        nome:
+                            "Bolas para gol",
+
+                        valor:
+                            valorScout(
+                                scout,
+                                "bolas_para_gol"
+                            )
+                    }
+
+                ];
+
+            }
+
+
+            return estatisticas
+                .map(
+
+                    estatistica => `
+
+                        <div class="stat-box">
+
+                            <span>
+
+                                ${estatistica.nome}
+
+                            </span>
+
+                            <strong>
+
+                                ${estatistica.valor}
+
+                            </strong>
+
+                        </div>
+
+                    `
+
+                )
+                .join("");
+
+        }
+
+
+        /* =========================
+           RENDERIZAR
+        ========================= */
+
+        function renderizar() {
+
+            const grid =
+                document.getElementById(
+                    "grid-cards"
+                );
+
+
+            const campoPesquisa =
+                document.getElementById(
+                    "pesquisa"
+                );
+
+
+            const selectPosicao =
+                document.getElementById(
+                    "posicao"
+                );
+
+
+            const pesquisa =
+                normalizarTexto(
+
+                    campoPesquisa
+                    ?
+                    campoPesquisa.value
+                    :
+                    ""
+
+                );
+
+
+            const filtroPosicao =
+                selectPosicao
+                ?
+                selectPosicao.value
+                :
+                "";
+
+
+            const jogadoresFiltrados =
+                elenco.filter(
+
+                    jogador => {
+
+                        if (
+
+                            !jogador
+
+                            ||
+
+                            !jogador.nome
+
+                        ) {
+
+                            return false;
+
+                        }
+
+
+                        const nome =
+                            normalizarTexto(
+                                jogador.nome
+                            );
+
+
+                        const posicao =
+                            String(
+                                jogador.posicao || ""
+                            )
+                            .trim();
+
+
+                        const passaPesquisa =
+                            nome.includes(
+                                pesquisa
+                            );
+
+
+                        const passaPosicao =
+
+                            !filtroPosicao
+
+                            ||
+
+                            posicao ===
+                            filtroPosicao;
+
+
+                        return (
+
+                            passaPesquisa
+
+                            &&
+
+                            passaPosicao
+
+                        );
+
+                    }
+
+                );
+
+
+            grid.innerHTML = "";
+
+
+            if (
+                jogadoresFiltrados.length === 0
+            ) {
+
+                grid.innerHTML = `
+
+                    <div class="empty-state">
+
+                        Nenhum atleta encontrado.
+
+                        <br><br>
+
+                        Atletas carregados:
+                        ${elenco.length}
+
+                    </div>
+
+                `;
+
+
+                return;
+
+            }
+
+
+            jogadoresFiltrados.forEach(
+
+                jogador => {
+
+                    const scout =
+                        pegarScout(
+                            jogador.nome
+                        );
+
+
+                    const partida =
+                        jogador.ultima_partida
+                        ||
+                        {};
+
+
+                    const defensiva =
+                        Number(
+                            partida.participacao_defensiva
+                        )
+                        ||
+                        0;
+
+
+                    const criativa =
+                        Number(
+                            partida.participacao_criativa
+                        )
+                        ||
+                        0;
+
+
+                    const ofensiva =
+                        Number(
+
+                            partida.participacao_ofensiva
+                            ??
+                            partida.Participacao_ofensiva
+                            ??
+                            0
+
+                        )
+                        ||
+                        0;
+
+
+                    const geral =
+                        Number(
+                            partida.geral
+                        )
+                        ||
+                        0;
+
+
+                    const ficha =
+                        gerarFichaScout(
+
+                            scout,
+
+                            jogador.posicao
+
+                        );
+
+
+                    grid.innerHTML += `
+
+                        <div class="card-atleta">
+
+
+                            <div class="card-header">
+
+
+                                <div class="card-info">
+
+
+                                    <h3>
+
+                                        ${jogador.nome}
+
+                                    </h3>
+
+
+                                    <span class="posicao">
+
+                                        ${
+                                            jogador.posicao
+                                            ||
+                                            "Sem posição"
+                                        }
+
+                                    </span>
+
+
+                                </div>
+
+
+                                <div class="badge-geral">
+
+                                    ${geral}%
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="card-metrics">
+
+
+                                <div class="metric-item">
+
+                                    <span>
+
+                                        P.A.
+
+                                    </span>
+
+                                    <strong>
+
+                                        ${ofensiva}
+
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="metric-item">
+
+                                    <span>
+
+                                        P.C.
+
+                                    </span>
+
+                                    <strong>
+
+                                        ${criativa}
+
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="metric-item">
+
+                                    <span>
+
+                                        P.O.
+
+                                    </span>
+
+                                    <strong>
+
+                                        ${defensiva}
+
+                                    </strong>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <details>
+
+
+                                <summary>
+
+                                    Ficha completa
+
+                                </summary>
+
+
+                                <div
+                                    class="details-content"
+                                >
+
+                                    ${ficha}
+
+                                </div>
+
+
+                            </details>
+
+
+                        </div>
+
+                    `;
+
+                }
+
+            );
+
+        }
+
+
+        /* =========================
+           EVENTOS
+        ========================= */
+
+        document
+            .getElementById(
+                "pesquisa"
+            )
+            .addEventListener(
+                "input",
+                renderizar
+            );
+
+
+        document
+            .getElementById(
+                "posicao"
+            )
+            .addEventListener(
+                "change",
+                renderizar
+            );
+
+
+        /* =========================
+           INICIAR
+        ========================= */
+
+        carregarDados();
+
+    </script>
+
+
+    <!-- =========================
+         FECHAR ANÚNCIO
+    ========================= -->
+
+    <script>
+
+        document
+            .getElementById(
+                "fechar-anuncio"
+            )
+            .addEventListener(
+
+                "click",
+
+                function () {
+
+
+                    const anuncio =
+                        document.getElementById(
+                            "anuncio-flutuante"
+                        );
+
+
+                    const overlay =
+                        document.getElementById(
+                            "overlay-anuncio"
+                        );
+
+
+                    anuncio.style.opacity =
+                        "0";
+
+
+                    anuncio.style.transform =
+                        "translate(-50%, -45%) scale(0.95)";
+
+
+                    overlay.style.opacity =
+                        "0";
+
+
+                    setTimeout(
+
+                        () => {
+
+                            anuncio.remove();
+
+                            overlay.remove();
+
+                        },
+
+                        300
+
+                    );
+
+                }
+
+            );
+
+    </script>
+
+
+</body>
+
+</html>
