@@ -2,26 +2,23 @@
   "250x300": [
     {
       "img": "https://exemplo.com/anuncio1.png",
-      "link": "https://exemplo.com"
+      "link": "https://form.jotform.com/262698231605057"
     },
     {
       "img": "https://exemplo.com/anuncio2.png",
-      "link": "https://exemplo.com"
+      "link": "https://form.jotform.com/262698231605057"
     }
   ],
 
   "300x60": [
     {
       "img": "https://exemplo.com/banner1.png",
-      "link": "https://exemplo.com"
+      "link": "https://form.jotform.com/262698231605057"
     },
     {
       "img": "https://exemplo.com/banner2.png",
-      "link": "https://exemplo.com"
-    },
-    {
-      "img": "https://exemplo.com/banner3.png",
-      "link": "https://exemplo.com"
+      "link": "https://form.jotform.com/262698231605057"
     }
+    
   ]
 }
