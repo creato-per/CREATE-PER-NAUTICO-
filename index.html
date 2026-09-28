@@ -1467,36 +1467,75 @@
         <div class="conteudo-anuncio">
 
 
-            <!-- CÓDIGO DO ANÚNCIO -->
+            <a
+    id="anuncio250x300"
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <img
+        id="imagemAnuncio250x300"
+        src=""
+        alt="Publicidade"
+        style="
+            width: 300px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+        "
+    >
+</a>
 
-            <script>
+<script>
+async function carregarAnuncio250x300() {
 
-                atOptions = {
+    try {
 
-                    'key':
-                        'f91292284fc8fd9b107d47a6e274fe79',
+        const resposta = await fetch(
+            'ads.json?v=' + Date.now()
+        );
 
-                    'format':
-                        'iframe',
+        const dados = await resposta.json();
 
-                    'height':
-                        250,
+        const anuncios =
+            dados["250x300"];
 
-                    'width':
-                        300,
+        if (
+            !Array.isArray(anuncios) ||
+            anuncios.length === 0
+        ) {
+            return;
+        }
 
-                    'params':
-                        {}
+        const anuncio =
+            anuncios[
+                Math.floor(
+                    Math.random() *
+                    anuncios.length
+                )
+            ];
 
-                };
+        document.getElementById(
+            "imagemAnuncio250x300"
+        ).src = anuncio.img;
 
-            </script>
+        document.getElementById(
+            "anuncio250x300"
+        ).href = anuncio.link;
 
+    } catch (erro) {
 
-            <script
-                src="https://www.highrevenueformat.com/f91292284fc8fd9b107d47a6e274fe79/invoke.js"
-            ></script>
+        console.error(
+            "Erro ao carregar anúncio:",
+            erro
+        );
 
+    }
+}
+
+carregarAnuncio250x300();
+</script>
 
         </div>
 
