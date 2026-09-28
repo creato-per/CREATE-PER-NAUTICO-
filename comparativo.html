@@ -492,31 +492,226 @@
          BLOCO ANÚNCIO
     ====================================================== -->
 
-    <section
-        class="secao-card"
+    <!-- =====================================================
+     BLOCO ANÚNCIO — CREATE PER 300x60
+====================================================== -->
+
+<section
+    class="secao-card"
+    style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+    "
+>
+
+    <a
+        id="anuncio300x60"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
         style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 16px;
+            display: block;
+            width: 300px;
+            height: 60px;
         "
     >
 
-        <script>
-            atOptions = {
-                'key': '3e342aeb083d859d055a6da96f4c7a2a',
-                'format': 'iframe',
-                'height': 50,
-                'width': 320,
-                'params': {}
-            };
-        </script>
+        <img
+            id="imagemAnuncio300x60"
+            src=""
+            alt="Publicidade"
+            style="
+                display: block;
+                width: 300px;
+                height: 60px;
+                object-fit: cover;
+                border-radius: 6px;
+            "
+        >
 
-        <script
-            src="https://www.highrevenueformat.com/3e342aeb083d859d055a6da96f4c7a2a/invoke.js"
-        ></script>
+    </a>
 
-    </section>
+</section>
+
+
+<script>
+
+/* =====================================================
+   CREATE PER — SISTEMA DE ANÚNCIOS 300x60
+   Fonte: ads.json
+   Rotação: 33 segundos
+===================================================== */
+
+let anuncios300x60 = [];
+
+let anuncioAtual300x60 = null;
+
+
+/* =====================================================
+   CARREGAR ADS.JSON
+===================================================== */
+
+async function carregarAnuncios300x60() {
+
+    try {
+
+        const resposta = await fetch(
+            'ads.json?v=' + Date.now(),
+            {
+                cache: 'no-store'
+            }
+        );
+
+
+        if (!resposta.ok) {
+
+            throw new Error(
+                'ads.json retornou HTTP ' +
+                resposta.status
+            );
+
+        }
+
+
+        const dados =
+            await resposta.json();
+
+
+        anuncios300x60 =
+            Array.isArray(dados['300x60'])
+                ? dados['300x60']
+                : [];
+
+
+        if (
+            anuncios300x60.length === 0
+        ) {
+
+            console.warn(
+                'Nenhum anúncio 300x60 encontrado.'
+            );
+
+            return;
+
+        }
+
+
+        /* Primeiro anúncio */
+
+        mostrarAnuncio300x60();
+
+
+        /*
+
+            Troca automaticamente
+            a cada 33 segundos.
+
+        */
+
+        setInterval(
+            mostrarAnuncio300x60,
+            33000
+        );
+
+
+    } catch (erro) {
+
+        console.error(
+            'Erro ao carregar anúncios:',
+            erro
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   ESCOLHER E EXIBIR ANÚNCIO
+===================================================== */
+
+function mostrarAnuncio300x60() {
+
+    if (
+        anuncios300x60.length === 0
+    ) {
+
+        return;
+
+    }
+
+
+    let novoAnuncio;
+
+
+    /*
+       Escolhe aleatoriamente.
+
+       Quando houver mais de um anúncio,
+       impede que o mesmo apareça duas
+       vezes seguidas.
+    */
+
+    do {
+
+        const indice =
+            Math.floor(
+                Math.random() *
+                anuncios300x60.length
+            );
+
+
+        novoAnuncio =
+            anuncios300x60[indice];
+
+    } while (
+        anuncios300x60.length > 1 &&
+        novoAnuncio === anuncioAtual300x60
+    );
+
+
+    anuncioAtual300x60 =
+        novoAnuncio;
+
+
+    const imagem =
+        document.getElementById(
+            'imagemAnuncio300x60'
+        );
+
+
+    const link =
+        document.getElementById(
+            'anuncio300x60'
+        );
+
+
+    if (!imagem || !link) {
+
+        return;
+
+    }
+
+
+    imagem.src =
+        novoAnuncio.img;
+
+
+    link.href =
+        novoAnuncio.link;
+
+}
+
+
+/* =====================================================
+   INICIAR SISTEMA
+===================================================== */
+
+carregarAnuncios300x60();
+
+</script>
 
 
 
