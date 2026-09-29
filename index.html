@@ -20,7 +20,7 @@
 
     <link
         rel="preconnect"
-        href="https://fonts.gstatic.com"
+        href="https://fonts.googleapis.com"
         crossorigin
     >
 
@@ -1468,74 +1468,95 @@
 
 
             <a
-    id="anuncio250x300"
-    href="#"
-    target="_blank"
-    rel="noopener noreferrer"
->
-    <img
-        id="imagemAnuncio250x300"
-        src=""
-        alt="Publicidade"
-        style="
-            width: 300px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 12px;
-            display: block;
-        "
-    >
-</a>
+                id="anuncio250x300"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
 
-<script>
-async function carregarAnuncio250x300() {
+                <img
+                    id="imagemAnuncio250x300"
+                    src=""
+                    alt="Publicidade"
+                    style="
+                        width: 300px;
+                        height: 250px;
+                        object-fit: cover;
+                        border-radius: 12px;
+                        display: block;
+                    "
+                >
 
-    try {
+            </a>
 
-        const resposta = await fetch(
-            'ads.json?v=' + Date.now()
-        );
 
-        const dados = await resposta.json();
+            <script>
 
-        const anuncios =
-            dados["250x300"];
+                async function carregarAnuncio250x300() {
 
-        if (
-            !Array.isArray(anuncios) ||
-            anuncios.length === 0
-        ) {
-            return;
-        }
+                    try {
 
-        const anuncio =
-            anuncios[
-                Math.floor(
-                    Math.random() *
-                    anuncios.length
-                )
-            ];
+                        const resposta =
+                            await fetch(
+                                'ads.json?v=' + Date.now()
+                            );
 
-        document.getElementById(
-            "imagemAnuncio250x300"
-        ).src = anuncio.img;
 
-        document.getElementById(
-            "anuncio250x300"
-        ).href = anuncio.link;
+                        const dados =
+                            await resposta.json();
 
-    } catch (erro) {
 
-        console.error(
-            "Erro ao carregar anúncio:",
-            erro
-        );
+                        const anuncios =
+                            dados["250x300"];
 
-    }
-}
 
-carregarAnuncio250x300();
-</script>
+                        if (
+                            !Array.isArray(anuncios) ||
+                            anuncios.length === 0
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        const anuncio =
+                            anuncios[
+                                Math.floor(
+                                    Math.random() *
+                                    anuncios.length
+                                )
+                            ];
+
+
+                        document.getElementById(
+                            "imagemAnuncio250x300"
+                        ).src =
+                            anuncio.img;
+
+
+                        document.getElementById(
+                            "anuncio250x300"
+                        ).href =
+                            anuncio.link;
+
+                    }
+
+                    catch (erro) {
+
+                        console.error(
+                            "Erro ao carregar anúncio:",
+                            erro
+                        );
+
+                    }
+
+                }
+
+
+                carregarAnuncio250x300();
+
+            </script>
 
         </div>
 
@@ -1906,8 +1927,7 @@ carregarAnuncio250x300();
                     jogos:
                         0,
 
-                    defesas_dificeis:
-                        0,
+                    /* ===== UNIVERSAIS ===== */
 
                     bolas_recuperadas:
                         0,
@@ -1915,13 +1935,10 @@ carregarAnuncio250x300();
                     gols_evitados:
                         0,
 
-                    chutes_sofridos:
+                    chance_criada:
                         0,
 
-                    bloqueio:
-                        0,
-
-                    desarme:
+                    finalizacao:
                         0,
 
                     gols:
@@ -1930,13 +1947,40 @@ carregarAnuncio250x300();
                     bolas_para_gol:
                         0,
 
-                    chance_criada:
-                        0,
-
                     drible_certo:
                         0,
 
                     gols_perdidos:
+                        0,
+
+
+                    /* ===== GOLEIRO ===== */
+
+                    defesas:
+                        0,
+
+                    defesas_dificeis:
+                        0,
+
+
+                    /* ===== DEFENSOR ===== */
+
+                    bloqueio:
+                        0,
+
+                    desarme:
+                        0,
+
+
+                    /* ===== MEIO-CAMPISTA ===== */
+
+                    grande_chance_criada:
+                        0,
+
+
+                    /* ===== ATACANTE ===== */
+
+                    gols_sofridos:
                         0
 
                 }
@@ -1964,7 +2008,7 @@ carregarAnuncio250x300();
 
 
         /* =========================
-           GERAR FICHA POR POSIÇÃO
+           GERAR FICHA DE SCOUT
         ========================= */
 
         function gerarFichaScout(
@@ -1972,27 +2016,141 @@ carregarAnuncio250x300();
             posicao
         ) {
 
-            let estatisticas = [];
+            /*
+             * ESTATÍSTICAS UNIVERSAIS
+             *
+             * Todos os jogadores,
+             * independentemente da posição,
+             * podem registrar estas ações.
+             */
+
+            let estatisticas = [
+
+                {
+                    nome:
+                        "Jogos",
+
+                    valor:
+                        valorScout(
+                            scout,
+                            "jogos"
+                        )
+                },
+
+                {
+                    nome:
+                        "Bolas recuperadas",
+
+                    valor:
+                        valorScout(
+                            scout,
+                            "bolas_recuperadas"
+                        )
+                },
+
+                {
+                    nome:
+                        "Gols evitados",
+
+                    valor:
+                        valorScout(
+                            scout,
+                            "gols_evitados"
+                        )
+                },
+
+                {
+                    nome:
+                        "Chances criadas",
+
+                    valor:
+                        valorScout(
+                            scout,
+                            "chance_criada"
+                        )
+                },
+
+                {
+                    nome:
+                        "Finalizações",
+
+                    valor:
+                        valorScout(
+                            scout,
+                            "finalizacao"
+                        )
+                },
+
+                {
+                    nome:
+                        "Gols",
+
+                    valor:
+                        valorScout(
+                            scout,
+                            "gols"
+                        )
+                },
+
+                {
+                    nome:
+                        "Bolas para gol",
+
+                    valor:
+                        valorScout(
+                            scout,
+                            "bolas_para_gol"
+                        )
+                },
+
+                {
+                    nome:
+                        "Dribles certos",
+
+                    valor:
+                        valorScout(
+                            scout,
+                            "drible_certo"
+                        )
+                },
+
+                {
+                    nome:
+                        "Gols perdidos",
+
+                    valor:
+                        valorScout(
+                            scout,
+                            "gols_perdidos"
+                        )
+                }
+
+            ];
 
 
             /* =========================
-               GOLEIROS
+               ESTATÍSTICAS ESPECÍFICAS
             ========================= */
+
+
+            /*
+             * GOLEIRO
+             */
 
             if (
                 posicao === "Goleiro"
             ) {
 
-                estatisticas = [
+                estatisticas.push(
 
                     {
                         nome:
-                            "Jogos",
+                            "Defesas",
 
                         valor:
                             valorScout(
                                 scout,
-                                "jogos"
+                                "defesas"
                             )
                     },
 
@@ -2005,66 +2163,22 @@ carregarAnuncio250x300();
                                 scout,
                                 "defesas_dificeis"
                             )
-                    },
-
-                    {
-                        nome:
-                            "Bolas recuperadas",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "bolas_recuperadas"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Gols evitados",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "gols_evitados"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Chutes sofridos",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "chutes_sofridos"
-                            )
                     }
 
-                ];
+                );
 
             }
 
 
-            /* =========================
-               DEFENSORES
-            ========================= */
+            /*
+             * DEFENSOR
+             */
 
             else if (
                 posicao === "Defensor"
             ) {
 
-                estatisticas = [
-
-                    {
-                        nome:
-                            "Jogos",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "jogos"
-                            )
-                    },
+                estatisticas.push(
 
                     {
                         nome:
@@ -2086,250 +2200,61 @@ carregarAnuncio250x300();
                                 scout,
                                 "desarme"
                             )
-                    },
-
-                    {
-                        nome:
-                            "Gols evitados",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "gols_evitados"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Gols",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "gols"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Bolas para gol",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "bolas_para_gol"
-                            )
                     }
 
-                ];
+                );
 
             }
 
 
-            /* =========================
-               MEIO-CAMPISTAS
-            ========================= */
+            /*
+             * MEIO-CAMPISTA
+             */
 
             else if (
                 posicao === "Meio-Campista"
             ) {
 
-                estatisticas = [
+                estatisticas.push(
 
                     {
                         nome:
-                            "Jogos",
+                            "Grandes chances criadas",
 
                         valor:
                             valorScout(
                                 scout,
-                                "jogos"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Chances criadas",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "chance_criada"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Dribles certos",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "drible_certo"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Gols",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "gols"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Bolas para gol",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "bolas_para_gol"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Gols perdidos",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "gols_perdidos"
+                                "grande_chance_criada"
                             )
                     }
 
-                ];
+                );
 
             }
 
 
-            /* =========================
-               ATACANTES
-            ========================= */
+            /*
+             * ATACANTE
+             */
 
             else if (
                 posicao === "Atacante"
             ) {
 
-                estatisticas = [
+                estatisticas.push(
 
                     {
                         nome:
-                            "Jogos",
+                            "Gols sofridos",
 
                         valor:
                             valorScout(
                                 scout,
-                                "jogos"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Chances criadas",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "chance_criada"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Dribles certos",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "drible_certo"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Gols",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "gols"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Bolas para gol",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "bolas_para_gol"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Gols perdidos",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "gols_perdidos"
+                                "gols_sofridos"
                             )
                     }
 
-                ];
-
-            }
-
-
-            /* =========================
-               POSIÇÃO DESCONHECIDA
-            ========================= */
-
-            else {
-
-                estatisticas = [
-
-                    {
-                        nome:
-                            "Jogos",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "jogos"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Gols",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "gols"
-                            )
-                    },
-
-                    {
-                        nome:
-                            "Bolas para gol",
-
-                        valor:
-                            valorScout(
-                                scout,
-                                "bolas_para_gol"
-                            )
-                    }
-
-                ];
+                );
 
             }
 
