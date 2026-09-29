@@ -6,18 +6,36 @@
       "posicao": "Goleiro",
       "jogos": 2,
       "defesas_dificeis": 8,
+      "defesas": 0,
       "bolas_recuperadas": 13,
       "gols_evitados": 2,
-      "chutes_sofridos":14
+      "chutes_sofridos": 14,
+      "chance_criada": 0,
+      "grande_chance_criada": 0,
+      "finalizacao": 0,
+      "gols": 0,
+      "bolas_para_gol": 0,
+      "drible_certo": 0,
+      "gols_perdidos": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Mão",
       "posicao": "Goleiro",
       "jogos": 0,
       "defesas_dificeis": 0,
+      "defesas": 0,
       "bolas_recuperadas": 0,
       "gols_evitados": 0,
-      "chutes_sofridos": 0
+      "chutes_sofridos": 0,
+      "chance_criada": 0,
+      "grande_chance_criada": 0,
+      "finalizacao": 0,
+      "gols": 0,
+      "bolas_para_gol": 0,
+      "drible_certo": 0,
+      "gols_perdidos": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Pietro",
@@ -27,7 +45,15 @@
       "desarme": 0,
       "gols_evitados": 0,
       "gols": 0,
-      "bolas_para_gol": 0
+      "bolas_para_gol": 0,
+      "bolas_recuperadas": 0,
+      "chance_criada": 0,
+      "finalizacao": 0,
+      "drible_certo": 0,
+      "gols_perdidos": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Gledson",
@@ -37,7 +63,15 @@
       "desarme": 1,
       "gols_evitados": 1,
       "gols": 0,
-      "bolas_para_gol": 1
+      "bolas_para_gol": 1,
+      "bolas_recuperadas": 0,
+      "chance_criada": 0,
+      "finalizacao": 0,
+      "drible_certo": 0,
+      "gols_perdidos": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Dhonatan",
@@ -47,7 +81,15 @@
       "desarme": 1,
       "gols_evitados": 0,
       "gols": 0,
-      "bolas_para_gol": 0
+      "bolas_para_gol": 0,
+      "bolas_recuperadas": 0,
+      "chance_criada": 0,
+      "finalizacao": 0,
+      "drible_certo": 0,
+      "gols_perdidos": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Vini",
@@ -57,7 +99,15 @@
       "desarme": 3,
       "gols_evitados": 0,
       "gols": 0,
-      "bolas_para_gol": 1
+      "bolas_para_gol": 1,
+      "bolas_recuperadas": 0,
+      "chance_criada": 0,
+      "finalizacao": 0,
+      "drible_certo": 0,
+      "gols_perdidos": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Guilherme Faria",
@@ -67,7 +117,15 @@
       "desarme": 0,
       "gols_evitados": 0,
       "gols": 0,
-      "bolas_para_gol": 0
+      "bolas_para_gol": 0,
+      "bolas_recuperadas": 0,
+      "chance_criada": 0,
+      "finalizacao": 0,
+      "drible_certo": 0,
+      "gols_perdidos": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "João Marcelo",
@@ -77,7 +135,15 @@
       "desarme": 2,
       "gols_evitados": 1,
       "gols": 1,
-      "bolas_para_gol": 0
+      "bolas_para_gol": 0,
+      "bolas_recuperadas": 0,
+      "chance_criada": 0,
+      "finalizacao": 0,
+      "drible_certo": 0,
+      "gols_perdidos": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Vinícios Gabriel",
@@ -87,7 +153,15 @@
       "desarme": 0,
       "gols_evitados": 0,
       "gols": 0,
-      "bolas_para_gol": 0
+      "bolas_para_gol": 0,
+      "bolas_recuperadas": 0,
+      "chance_criada": 0,
+      "finalizacao": 0,
+      "drible_certo": 0,
+      "gols_perdidos": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Vinícius Oliveira",
@@ -97,7 +171,15 @@
       "desarme": 0,
       "gols_evitados": 0,
       "gols": 0,
-      "bolas_para_gol": 0
+      "bolas_para_gol": 0,
+      "bolas_recuperadas": 0,
+      "chance_criada": 0,
+      "finalizacao": 0,
+      "drible_certo": 0,
+      "gols_perdidos": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Hector",
@@ -107,7 +189,15 @@
       "desarme": 5,
       "gols_evitados": 0,
       "gols": 0,
-      "bolas_para_gol": 1
+      "bolas_para_gol": 1,
+      "bolas_recuperadas": 0,
+      "chance_criada": 0,
+      "finalizacao": 0,
+      "drible_certo": 0,
+      "gols_perdidos": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Matheus Uchôa",
@@ -117,7 +207,13 @@
       "drible_certo": 0,
       "gols": 0,
       "bolas_para_gol": 0,
-      "gols_perdidos": 0
+      "gols_perdidos": 0,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Marcelinho",
@@ -127,7 +223,13 @@
       "drible_certo": 0,
       "gols": 0,
       "bolas_para_gol": 0,
-      "gols_perdidos": 1
+      "gols_perdidos": 1,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Pedro Ricardo",
@@ -137,7 +239,13 @@
       "drible_certo": 0,
       "gols": 0,
       "bolas_para_gol": 0,
-      "gols_perdidos": 1
+      "gols_perdidos": 1,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Thiago da Paz",
@@ -147,7 +255,13 @@
       "drible_certo": 0,
       "gols": 0,
       "bolas_para_gol": 0,
-      "gols_perdidos": 0
+      "gols_perdidos": 0,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Eric",
@@ -157,7 +271,13 @@
       "drible_certo": 0,
       "gols": 0,
       "bolas_para_gol": 0,
-      "gols_perdidos": 0
+      "gols_perdidos": 0,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Marley",
@@ -167,7 +287,13 @@
       "drible_certo": 0,
       "gols": 0,
       "bolas_para_gol": 0,
-      "gols_perdidos": 0
+      "gols_perdidos": 0,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Wendell",
@@ -177,7 +303,13 @@
       "drible_certo": 0,
       "gols": 0,
       "bolas_para_gol": 1,
-      "gols_perdidos": 1
+      "gols_perdidos": 1,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Rikelme",
@@ -187,7 +319,13 @@
       "drible_certo": 0,
       "gols": 0,
       "bolas_para_gol": 1,
-      "gols_perdidos": 0
+      "gols_perdidos": 0,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "isaque",
@@ -197,7 +335,13 @@
       "drible_certo": 0,
       "gols": 1,
       "bolas_para_gol": 1,
-      "gols_perdidos": 5
+      "gols_perdidos": 5,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Rosa",
@@ -207,7 +351,13 @@
       "drible_certo": 0,
       "gols": 0,
       "bolas_para_gol": 1,
-      "gols_perdidos": 3
+      "gols_perdidos": 3,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Lukayann",
@@ -217,7 +367,13 @@
       "drible_certo": 2,
       "gols": 0,
       "bolas_para_gol": 2,
-      "gols_perdidos": 3
+      "gols_perdidos": 3,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Daniel",
@@ -227,7 +383,13 @@
       "drible_certo": 1,
       "gols": 1,
       "bolas_para_gol": 1,
-      "gols_perdidos": 1
+      "gols_perdidos": 1,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Halanzinho",
@@ -237,7 +399,13 @@
       "drible_certo": 1,
       "gols": 0,
       "bolas_para_gol": 1,
-      "gols_perdidos": 2
+      "gols_perdidos": 2,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Adrian",
@@ -247,9 +415,15 @@
       "drible_certo": 0,
       "gols": 0,
       "bolas_para_gol": 0,
-      "gols_perdidos": 0
+      "gols_perdidos": 0,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
-{
+    {
       "nome": "Miguel",
       "posicao": "Defensor",
       "jogos": 1,
@@ -257,7 +431,15 @@
       "desarme": 0,
       "gols_evitados": 1,
       "gols": 0,
-      "bolas_para_gol": 0
+      "bolas_para_gol": 0,
+      "bolas_recuperadas": 0,
+      "chance_criada": 0,
+      "finalizacao": 0,
+      "drible_certo": 0,
+      "gols_perdidos": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     },
     {
       "nome": "Wellington Bigode",
@@ -267,7 +449,13 @@
       "drible_certo": 0,
       "gols": 0,
       "bolas_para_gol": 0,
-      "gols_perdidos": 0
+      "gols_perdidos": 0,
+      "bolas_recuperadas": 0,
+      "gols_evitados": 0,
+      "finalizacao": 0,
+      "defesas": 0,
+      "grande_chance_criada": 0,
+      "gols_sofridos": 0
     }
   ]
 }
